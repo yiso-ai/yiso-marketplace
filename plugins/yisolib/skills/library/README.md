@@ -2,6 +2,8 @@
 
 `Library` 是一个本地投研归档 Skill。用户给出文件或文件夹后，它负责：
 
+> **兼容性声明**：本 Skill 按 Claude Code 插件标准打包，入口是 `plugins/yisolib/skills/library/SKILL.md`。非 Claude Agent 使用或安装时，需按自身插件/技能标准转换目录、清单和调用方式。
+
 - 读取原件并记录内容哈希；
 - 把材料按研究事项拆成独立 Memo；
 - 为每篇 Memo 确定主公司和主主题，并绑定正文证据；

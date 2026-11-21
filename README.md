@@ -2,25 +2,29 @@
 
 一个可安装的 Claude Code 插件示例：把 `library` Skill、插件索引和静态安装引导页放在同一个 Git 仓库里。
 
-仓库根目录就是插件根目录，`docs/` 是给人看的安装页面。没有市场网站、没有构建步骤、没有运行时依赖。
+仓库根目录是插件市场，`plugins/yisolib/` 是插件根目录，`docs/` 是给人看的安装页面。没有构建步骤，也没有运行时依赖。
+
+> **标准声明**：本插件市场和插件基于 Claude Code 插件标准。非 Claude Agent 安装插件时，需结合自身插件标准进行转换调整，不能假定目录、清单和调用方式可以直接复用。Claude Code 的插件组件默认从插件根目录的 `skills/`、`agents/`、`commands/`、`hooks/` 等位置加载；本仓库的插件根目录是 `plugins/yisolib/`。
 
 ## 这个仓库包含什么
 
 ```text
 yiso-marketplace/
 ├── .claude-plugin/
-│   ├── plugin.json                  # 插件清单
-│   └── marketplace.json             # 仓库内插件索引
-├── skills/
-│   └── library/
-│       ├── SKILL.md                 # 技能入口
-│       ├── references/              # 本地流程、数据库、图片、行业和验收规则
-│       ├── scripts/                 # 扫描、批次、写入、校验与回归脚本
-│       ├── assets/
-│       │   ├── starter/             # SQLite + 合成 fixture + 阅读界面
-│       │   ├── source-fixtures/     # 通用结构样例
-│       │   └── icon.svg
-│       └── production/              # 本地归档依赖的固定运行模块
+│   └── marketplace.json             # 插件市场索引
+├── plugins/
+│   └── yisolib/                     # 插件根目录
+│       ├── .claude-plugin/
+│       │   └── plugin.json          # 插件清单
+│       └── skills/
+│           └── library/
+│               ├── SKILL.md         # 技能入口
+│               ├── references/      # 本地流程、数据库、图片、行业和验收规则
+│               ├── scripts/         # 扫描、批次、写入、校验与回归脚本
+│               ├── assets/          # Starter、合成样例和图标
+│               ├── production/      # 本地归档依赖的固定运行模块
+│               ├── tests/           # 技能级回归与验收脚本
+│               └── agents/openai.yaml # OpenAI/Codex 元数据，Claude 不加载
 └── docs/
     ├── index.html                   # 安装与使用说明
     ├── style.css
@@ -85,7 +89,7 @@ Word 增量：
 
 ## 本地合成演示
 
-需要 Python 3.10+（本次验证使用 Python 3.12）。在仓库的 `skills/library` 目录下运行：
+需要 Python 3.10+（本次验证使用 Python 3.12）。在仓库的 `plugins/yisolib/skills/library` 目录下运行：
 
 ```bash
 python assets/starter/starter.py init --db /tmp/library-demo.sqlite
@@ -134,14 +138,14 @@ claude plugin uninstall yisolib
 
 ## 手动安装
 
-如果暂时不能使用 `claude plugin`，可以下载仓库，只复制 `skills/library`：
+如果暂时不能使用 `claude plugin`，可以下载仓库，只复制 `plugins/yisolib/skills/library`：
 
 ```bash
 tmp="$(mktemp -d)"
 curl -fsSL https://github.com/yiso-ai/yiso-marketplace/archive/refs/heads/main.tar.gz \
   | tar -xz -C "$tmp" --strip-components=1
 mkdir -p ~/.claude/skills
-cp -R "$tmp/skills/library" ~/.claude/skills/
+cp -R "$tmp/plugins/yisolib/skills/library" ~/.claude/skills/
 ```
 
 手动安装适合首次使用；此方式下直接调用 `/library`。后续更新和卸载建议使用插件命令。

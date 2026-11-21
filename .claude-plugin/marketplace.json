@@ -1,13 +1,16 @@
 {
   "name": "yiso-marketplace",
   "description": "Yiso 的 Claude Code 插件市场",
+  "metadata": {
+    "description": "Yiso 的 Claude Code 插件市场"
+  },
   "owner": {
     "name": "Yiso"
   },
   "plugins": [
     {
       "name": "yisolib",
-      "source": "./",
+      "source": "./plugins/yisolib",
       "description": "读取本地投研资料，拆分研究事项，保留出处与证据，并归档到 Library。",
       "category": "研究工具",
       "tags": [

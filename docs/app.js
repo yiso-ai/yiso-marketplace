@@ -26,7 +26,7 @@ const archiveUrl = `https://github.com/${repo}/archive/refs/heads/main.tar.gz`;
 const commands = {
   "install-market": `claude plugin marketplace add ${repo}`,
   "install-plugin": "claude plugin install yisolib@yiso-marketplace",
-  "install-tarball": `tmp="$(mktemp -d)"\ncurl -fsSL ${archiveUrl} | tar -xz -C "$tmp" --strip-components=1\nmkdir -p ~/.claude/skills\ncp -R "$tmp/skills/library" ~/.claude/skills/`,
+  "install-tarball": `tmp="$(mktemp -d)"\ncurl -fsSL ${archiveUrl} | tar -xz -C "$tmp" --strip-components=1\nmkdir -p ~/.claude/skills\ncp -R "$tmp/plugins/yisolib/skills/library" ~/.claude/skills/`,
   "prompt-draft": `${PLUGIN_COMMAND} 只试读这个目录，先列出会收录的 Memo、主归属和证据，不写数据库。`,
   "prompt-word": `${PLUGIN_COMMAND} 比对这份更新的 Word，只归档已核实的新增和修订；有候选旧稿时先让我确认。`,
   "prompt-archive": `${PLUGIN_COMMAND} 归档这批资料；新公司按主营业务归入申万 2021 二级，无法区分二级时归入一级。`,

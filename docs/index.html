@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Library 是一个 Claude Code 插件：读取本地投研资料，拆分研究事项，保留出处与证据，并归档到 Library。"
+      content="Library 是一个按 Claude Code 插件标准打包的插件：读取本地投研资料，拆分研究事项，保留出处与证据，并归档到 Library。非 Claude Agent 安装时需按自身插件标准转换调整。"
+    />
+    <meta
+      name="plugin-standard"
+      content="Claude Code plugin standard; non-Claude agents must adapt directory layout, manifests, and invocation"
     />
     <title>Library · Claude Code 插件安装</title>
     <link rel="canonical" href="https://yiso.asia/" />
@@ -40,7 +44,7 @@
         <div class="plugin-identity">
           <p class="plugin-meta">
             <span>PLUGIN <b>/</b> YISOLIB</span>
-            <span class="version">v0.2.0</span>
+            <span class="version">v0.2.1</span>
           </p>
           <h1>Library</h1>
           <p class="plugin-summary">
@@ -57,7 +61,7 @@
             </div>
             <div>
               <dt>更新</dt>
-              <dd><time datetime="2026-11-21">2026/11/21</time></dd>
+              <dd><time datetime="2026-11-22">2026/11/22</time></dd>
             </div>
           </dl>
 
@@ -96,6 +100,7 @@
 
           <p class="install-hint">已添加此市场？直接运行第二条命令即可。</p>
           <p class="install-hint">安装后在 Claude Code 中执行 <code>/reload-plugins</code>，或重新启动会话。</p>
+          <p class="install-note compat-note"><strong>标准说明：</strong>本插件市场和插件基于 Claude Code 插件标准。非 Claude Agent 安装插件时，需结合自身插件标准进行转换调整。</p>
         </aside>
       </section>
 
@@ -143,7 +148,7 @@
             </ul>
 
             <h3>本地合成演示</h3>
-            <p>在插件源码的 <code>skills/library</code> 目录下运行，不会读取真实研究：</p>
+            <p>在插件源码的 <code>plugins/yisolib/skills/library</code> 目录下运行，不会读取真实研究：</p>
             <div class="command command-block">
               <code data-command="demo">python assets/starter/starter.py init --db /tmp/library-demo.sqlite
 python assets/starter/starter.py import --db /tmp/library-demo.sqlite --input assets/starter/fixture.json
@@ -163,6 +168,9 @@ python assets/starter/starter.py serve --db /tmp/library-demo.sqlite --port 8765
             <h3>配置项</h3>
             <p>这个插件没有内置 API Key 或必填服务配置。目标 Library 路径、资料来源和写入范围由你的本地环境与本轮任务确定。</p>
 
+            <h3>兼容性说明</h3>
+            <p>本插件市场和插件基于 Claude Code 插件标准组织：市场清单位于 <code>.claude-plugin/marketplace.json</code>，插件清单位于 <code>plugins/yisolib/.claude-plugin/plugin.json</code>，技能入口位于 <code>plugins/yisolib/skills/library/SKILL.md</code>。非 Claude Agent 安装插件时，需结合自身插件标准转换目录结构、清单格式、组件发现规则和调用命令，不能假定可以直接安装或直接复用。</p>
+
             <h3>常见问题</h3>
             <div class="faq-list">
               <details>
@@ -175,12 +183,12 @@ python assets/starter/starter.py serve --db /tmp/library-demo.sqlite --port 8765
               </details>
               <details>
                 <summary>没有 <code>claude plugin</code> 命令时怎么安装？</summary>
-                <p>可以下载仓库，只复制其中的 <code>skills/library</code>。此方式下直接调用 <code>/library</code>。</p>
+                <p>可以下载仓库，只复制其中的 <code>plugins/yisolib/skills/library</code>。此方式下直接调用 <code>/library</code>。</p>
                 <div class="command command-light">
                   <code data-command="install-tarball">tmp="$(mktemp -d)"
 curl -fsSL https://github.com/yiso-ai/yiso-marketplace/archive/refs/heads/main.tar.gz | tar -xz -C "$tmp" --strip-components=1
 mkdir -p ~/.claude/skills
-cp -R "$tmp/skills/library" ~/.claude/skills/</code>
+cp -R "$tmp/plugins/yisolib/skills/library" ~/.claude/skills/</code>
                   <button type="button" class="copy-button" data-copy>复制</button>
                 </div>
               </details>
