@@ -32,6 +32,8 @@ const commands = {
   "install-codex": `$skill-installer 从 ${repoUrl}/tree/main/plugins/yisolib/skills/library 安装 library`,
   "prompt-codex": "$library 试读我指定的资料目录，先给我看拟归档清单，不要写库。",
   "install-codex-manual": `tmp="$(mktemp -d)"\ncurl -fsSL ${archiveUrl} | tar -xz -C "$tmp" --strip-components=1\nmkdir -p ~/.codex/skills\ncp -R "$tmp/plugins/yisolib/skills/library" ~/.codex/skills/`,
+  "install-other": `SKILLS_DIR="/absolute/path/to/your-agent/skills"\ntmp="$(mktemp -d)"\ncurl -fsSL ${archiveUrl} | tar -xz -C "$tmp" --strip-components=1\nmkdir -p "$SKILLS_DIR"\ncp -R "$tmp/plugins/yisolib/skills/library" "$SKILLS_DIR/"`,
+  "prompt-other": "使用 library 技能：试读我指定的资料目录，先给我看拟归档清单，不要写库。",
   "prompt-draft": `${PLUGIN_COMMAND} 只试读这个目录，先列出会收录的 Memo、主归属和证据，不写数据库。`,
   "prompt-word": `${PLUGIN_COMMAND} 比对这份更新的 Word，只归档已核实的新增和修订；有候选旧稿时先让我确认。`,
   "prompt-archive": `${PLUGIN_COMMAND} 归档这批资料；新公司按主营业务归入申万 2021 二级，无法区分二级时归入一级。`,

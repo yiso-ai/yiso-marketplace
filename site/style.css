@@ -147,15 +147,6 @@ pre {
   letter-spacing: -0.015em;
 }
 
-.brand-text small {
-  margin-top: 0.12rem;
-  color: var(--muted);
-  font-size: 0.64rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
 .header-link {
   color: var(--muted);
   font-size: 0.85rem;
@@ -328,7 +319,7 @@ h1 {
 
 .agent-tabs {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.25rem;
   margin-top: 1.2rem;
   padding: 0.28rem;
@@ -395,6 +386,12 @@ h1 {
   font-size: 0.73rem;
   font-weight: 650;
   cursor: pointer;
+}
+
+.manual-fallback p {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  font-size: 0.76rem;
 }
 
 .manual-fallback .command {
@@ -818,6 +815,10 @@ summary:focus-visible {
     font-size: 0.7rem;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
+  }
+
+  .agent-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .plugin-reading {
