@@ -1,23 +1,23 @@
 :root {
   color-scheme: light dark;
-  --bg: #fbfaff;
-  --bg-soft: #f5f1fb;
+  --bg: #ffffff;
+  --bg-soft: #faf9fc;
   --surface: #ffffff;
-  --surface-raised: #fcfbff;
-  --text: #17131f;
-  --muted: #6f687b;
-  --dim: #968fa3;
-  --line: #e8e2f1;
-  --line-strong: #d8cfe7;
+  --surface-raised: #fcfbfd;
+  --text: #1b1820;
+  --muted: #6b6875;
+  --dim: #9a95a3;
+  --line: #e9e5ef;
+  --line-strong: #d9d2e3;
   --accent: #4c1d95;
   --accent-strong: #2e1065;
-  --accent-bright: #7c3aed;
-  --accent-soft: #f0e9ff;
-  --accent-faint: #f8f5ff;
-  --code-bg: #17121f;
+  --accent-bright: #7e22ce;
+  --accent-soft: #ede9fe;
+  --accent-faint: #f7f4ff;
+  --code-bg: #17141c;
   --code-text: #f6f2ff;
-  --shadow: 0 18px 54px rgba(46, 16, 101, 0.08);
-  --shadow-soft: 0 10px 30px rgba(46, 16, 101, 0.05);
+  --shadow: 0 24px 70px rgba(24, 18, 36, 0.10);
+  --shadow-soft: 0 14px 40px rgba(24, 18, 36, 0.06);
   --radius-lg: 20px;
   --radius-md: 14px;
   --radius-sm: 10px;
@@ -58,9 +58,7 @@ html {
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at 78% -10%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 32rem),
-    var(--bg);
+  background: var(--bg);
   color: var(--text);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
   line-height: 1.65;
