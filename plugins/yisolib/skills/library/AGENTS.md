@@ -1,9 +1,9 @@
 # Library Skill 维护约定
 
-- Skill 入口位于 `plugins/yisolib/skills/library/SKILL.md`，安装说明页位于仓库根目录的 `docs/`。
+- Skill 入口位于 `plugins/yisolib/skills/library/SKILL.md`，安装说明页位于仓库根目录的 `site/`。
 - 本插件市场与插件基于 Claude Code 插件标准；非 Claude Agent 使用时需按自身插件/技能标准转换目录、清单和调用方式。
 - 修改读取、批次准备或写入流程时，先在隔离数据库和合成资料上验证；不要指向真实 Library。
 - 公司、行业审核和 Memo 应在同一事务中提交。验证新公司唯一行业、旧回执、重复归档和失败回滚。
 - 保留 `production/` 中的本地写入依赖及其相互引用，不要为了页面展示随意删除运行模块。
-- 页面中的命令应和插件清单、Skill 目录及 `docs/app.js` 保持一致。
+- 页面中的命令应和插件清单、Skill 目录及 `site/app.js` 保持一致。
 - 分发前检查仓库中不含真实研究、账户信息、本机路径、凭证或数据库导出。

@@ -2,7 +2,7 @@
 
 一个可安装的 Claude Code 插件示例：把 `library` Skill、插件索引和静态安装引导页放在同一个 Git 仓库里。
 
-仓库根目录是插件市场，`plugins/yisolib/` 是插件根目录，`docs/` 是给人看的安装页面。没有构建步骤，也没有运行时依赖。
+仓库根目录是插件市场，`plugins/yisolib/` 是插件根目录，`site/` 是给人看的安装页面。没有构建步骤，也没有运行时依赖。
 
 > **标准声明**：本插件市场和插件基于 Claude Code 插件标准。非 Claude Agent 安装插件时，需结合自身插件标准进行转换调整，不能假定目录、清单和调用方式可以直接复用。Claude Code 的插件组件默认从插件根目录的 `skills/`、`agents/`、`commands/`、`hooks/` 等位置加载；本仓库的插件根目录是 `plugins/yisolib/`。
 
@@ -12,6 +12,9 @@
 yiso-marketplace/
 ├── .claude-plugin/
 │   └── marketplace.json             # 插件市场索引
+├── .github/
+│   └── workflows/
+│       └── pages.yml                # GitHub Pages 发布工作流
 ├── plugins/
 │   └── yisolib/                     # 插件根目录
 │       ├── .claude-plugin/
@@ -25,17 +28,17 @@ yiso-marketplace/
 │               ├── production/      # 本地归档依赖的固定运行模块
 │               ├── tests/           # 技能级回归与验收脚本
 │               └── openai.yaml      # OpenAI/Codex 元数据，Claude 不加载
-└── docs/
+└── site/
     ├── index.html                   # 安装与使用说明
     ├── style.css
     ├── app.js                       # 复制命令、仓库地址和安装提示
     ├── CNAME                        # GitHub Pages 自定义域名
-    └── .nojekyll                    # 跳过 Jekyll 处理
+    └── .nojekyll                    # 兼容静态托管，避免 Jekyll 处理
 ```
 
 ## 发布安装页
 
-`docs/` 通过 GitHub Pages 发布到 <https://yiso.asia/>。发布源为 `main` 分支的 `/docs` 目录。
+`site/` 通过 GitHub Actions 发布到 <https://yiso.asia/>。推送到 `main` 分支会触发 `.github/workflows/pages.yml`，只上传静态文件，不执行构建。
 
 DNS 在阿里云解析设置：
 
@@ -43,7 +46,7 @@ DNS 在阿里云解析设置：
 - `AAAA` 记录：主机记录 `@`，值分别为 `2606:50c0:8000::153`、`2606:50c0:8001::153`、`2606:50c0:8002::153`、`2606:50c0:8003::153`
 - `CNAME` 记录：主机记录 `www`，值为 `yiso-ai.github.io`
 
-然后在 GitHub 仓库进入 `Settings → Pages`，选择 `Deploy from a branch`、分支 `main`、目录 `/docs`，并把自定义域名设为 `yiso.asia`。DNS 生效并签发证书后，启用 `Enforce HTTPS`。
+然后在 GitHub 仓库进入 `Settings → Pages`，把 `Build and deployment → Source` 改为 `GitHub Actions`，并把自定义域名设为 `yiso.asia`。DNS 生效并签发证书后，启用 `Enforce HTTPS`。后续每次推送 `main` 都会自动发布。
 
 ## 安装
 
@@ -152,10 +155,10 @@ cp -R "$tmp/plugins/yisolib/skills/library" ~/.claude/skills/
 
 ## 页面预览
 
-`docs/` 是纯静态页面，可以直接打开，或在仓库根目录运行：
+`site/` 是纯静态页面，可以直接打开，或在仓库根目录运行：
 
 ```bash
-python3 -m http.server 4173 --directory docs
+python3 -m http.server 4173 --directory site
 ```
 
 然后访问 <http://127.0.0.1:4173>。页面也支持用 `?repo=owner/repo` 覆盖 GitHub 仓库地址。
