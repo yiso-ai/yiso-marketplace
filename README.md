@@ -24,8 +24,22 @@ yiso-marketplace/
 └── docs/
     ├── index.html                   # 安装与使用说明
     ├── style.css
-    └── app.js                       # 复制命令、仓库地址和安装提示
+    ├── app.js                       # 复制命令、仓库地址和安装提示
+    ├── CNAME                        # GitHub Pages 自定义域名
+    └── .nojekyll                    # 跳过 Jekyll 处理
 ```
+
+## 发布安装页
+
+`docs/` 通过 GitHub Pages 发布到 <https://yiso-brain.cn/>。发布源为 `main` 分支的 `/docs` 目录。
+
+DNS 在阿里云解析设置：
+
+- `A` 记录：主机记录 `@`，值分别为 `185.199.108.153`、`185.199.109.153`、`185.199.110.153`、`185.199.111.153`
+- `AAAA` 记录：主机记录 `@`，值分别为 `2606:50c0:8000::153`、`2606:50c0:8001::153`、`2606:50c0:8002::153`、`2606:50c0:8003::153`
+- `CNAME` 记录：主机记录 `www`，值为 `yiso-ai.github.io`
+
+然后在 GitHub 仓库进入 `Settings → Pages`，选择 `Deploy from a branch`、分支 `main`、目录 `/docs`，并把自定义域名设为 `yiso-brain.cn`。DNS 生效并签发证书后，启用 `Enforce HTTPS`。
 
 ## 安装
 
