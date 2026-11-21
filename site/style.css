@@ -21,7 +21,7 @@
   --radius-lg: 20px;
   --radius-md: 14px;
   --radius-sm: 10px;
-  --container: 1120px;
+  --container: 1200px;
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
 
@@ -602,6 +602,18 @@ h1 {
   border-top: 1px solid var(--line);
 }
 
+.faq-section {
+  grid-column: 1 / -1;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.faq-section .faq-list {
+  max-width: 56rem;
+  margin-top: 1rem;
+}
+
 .faq-list details {
   border-bottom: 1px solid var(--line);
 }
@@ -772,6 +784,11 @@ summary:focus-visible {
     padding-left: 0;
     border-top: 1px solid var(--line);
     border-left: 0;
+  }
+
+  .faq-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
   }
 }
 

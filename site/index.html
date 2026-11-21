@@ -13,7 +13,7 @@
     />
     <title>Library · Claude Code / Cursor / Codex 安装</title>
     <link rel="canonical" href="https://yiso.asia/" />
-    <link rel="stylesheet" href="./style.css?v=20261122-agents-2" />
+    <link rel="stylesheet" href="./style.css?v=20261122-agents-3" />
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
@@ -230,41 +230,6 @@ python assets/starter/starter.py serve --db /tmp/library-demo.sqlite --port 8765
 
             <h3>兼容性说明</h3>
             <p>本仓库以 Claude Code 插件标准组织：市场清单位于 <code>.claude-plugin/marketplace.json</code>，插件清单位于 <code>plugins/yisolib/.claude-plugin/plugin.json</code>，技能入口位于 <code>plugins/yisolib/skills/library/SKILL.md</code>。Claude Code 可直接使用插件命令；Cursor 与 Codex 将同一份 Skill 复制到各自用户目录加载。其他 Agent 安装时仍需按自身标准转换目录、清单、组件发现规则和调用命令。</p>
-
-            <h3>常见问题</h3>
-            <div class="faq-list">
-              <details>
-                <summary>如何确认安装成功？</summary>
-                <p>Claude Code 输入 <code>/yisolib:library</code>；Cursor 输入 <code>/library</code>；Codex 输入 <code>$library</code>。能进入读取和审阅流程即表示加载成功。</p>
-              </details>
-              <details>
-                <summary>会自动读取我的邮箱吗？</summary>
-                <p>不会。Library 只处理你给出的本地路径。邮箱或云端来源需要由你的原生连接器单独读取，再作为明确输入交给 Library。</p>
-              </details>
-              <details>
-                <summary>没有 <code>claude plugin</code> 命令时怎么安装？</summary>
-                <p>可以下载仓库，只复制其中的 <code>plugins/yisolib/skills/library</code>。此方式下直接调用 <code>/library</code>。</p>
-                <div class="command command-light">
-                  <code data-command="install-tarball">tmp="$(mktemp -d)"
-curl -fsSL https://github.com/yiso-ai/yiso-marketplace/archive/refs/heads/main.tar.gz | tar -xz -C "$tmp" --strip-components=1
-mkdir -p ~/.claude/skills
-cp -R "$tmp/plugins/yisolib/skills/library" ~/.claude/skills/</code>
-                  <button type="button" class="copy-button" data-copy>复制</button>
-                </div>
-              </details>
-              <details>
-                <summary>如何更新和卸载？</summary>
-                <div class="command command-light">
-                  <code data-command="update">claude plugin marketplace update
-claude plugin update yisolib</code>
-                  <button type="button" class="copy-button" data-copy>复制</button>
-                </div>
-                <div class="command command-light">
-                  <code data-command="uninstall">claude plugin uninstall yisolib</code>
-                  <button type="button" class="copy-button" data-copy>复制</button>
-                </div>
-              </details>
-            </div>
           </section>
         </div>
 
@@ -299,6 +264,43 @@ claude plugin update yisolib</code>
             <p>无内置 API Key。真实资料读取和写入目标按本机环境与本轮任务单独确认。</p>
           </section>
         </aside>
+
+        <section class="doc-section faq-section" id="faq" aria-labelledby="faq-heading">
+          <h2 id="faq-heading">常见问题</h2>
+          <div class="faq-list">
+            <details>
+              <summary>如何确认安装成功？</summary>
+              <p>Claude Code 输入 <code>/yisolib:library</code>；Cursor 输入 <code>/library</code>；Codex 输入 <code>$library</code>。能进入读取和审阅流程即表示加载成功。</p>
+            </details>
+            <details>
+              <summary>会自动读取我的邮箱吗？</summary>
+              <p>不会。Library 只处理你给出的本地路径。邮箱或云端来源需要由你的原生连接器单独读取，再作为明确输入交给 Library。</p>
+            </details>
+            <details>
+              <summary>没有 <code>claude plugin</code> 命令时怎么安装？</summary>
+              <p>可以下载仓库，只复制其中的 <code>plugins/yisolib/skills/library</code>。此方式下直接调用 <code>/library</code>。</p>
+              <div class="command command-light">
+                <code data-command="install-tarball">tmp="$(mktemp -d)"
+curl -fsSL https://github.com/yiso-ai/yiso-marketplace/archive/refs/heads/main.tar.gz | tar -xz -C "$tmp" --strip-components=1
+mkdir -p ~/.claude/skills
+cp -R "$tmp/plugins/yisolib/skills/library" ~/.claude/skills/</code>
+                <button type="button" class="copy-button" data-copy>复制</button>
+              </div>
+            </details>
+            <details>
+              <summary>如何更新和卸载？</summary>
+              <div class="command command-light">
+                <code data-command="update">claude plugin marketplace update
+claude plugin update yisolib</code>
+                <button type="button" class="copy-button" data-copy>复制</button>
+              </div>
+              <div class="command command-light">
+                <code data-command="uninstall">claude plugin uninstall yisolib</code>
+                <button type="button" class="copy-button" data-copy>复制</button>
+              </div>
+            </details>
+          </div>
+        </section>
       </div>
     </main>
 
