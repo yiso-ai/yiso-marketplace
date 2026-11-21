@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Library 是一个按 Claude Code 插件标准打包的插件：读取本地投研资料，拆分研究事项，保留出处与证据，并归档到 Library。非 Claude Agent 安装时需按自身插件标准转换调整。"
+      content="Library 可按 Claude Code 插件安装，也可作为 Cursor 或 Codex Skill 安装：读取本地投研资料，拆分研究事项，保留出处与证据，并归档到 Library。"
     />
     <meta
       name="plugin-standard"
       content="Claude Code plugin standard; non-Claude agents must adapt directory layout, manifests, and invocation"
     />
-    <title>Library · Claude Code 插件安装</title>
+    <title>Library · Claude Code / Cursor / Codex 安装</title>
     <link rel="canonical" href="https://yiso.asia/" />
-    <link rel="stylesheet" href="./style.css?v=20261122-white" />
+    <link rel="stylesheet" href="./style.css?v=20261122-agents-2" />
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
@@ -30,7 +30,7 @@
           </span>
           <span class="brand-text">
             <strong>Yiso Plugin</strong>
-            <small>Claude Code</small>
+            <small>Claude · Cursor · Codex</small>
           </span>
         </a>
         <nav aria-label="站点导航">
@@ -77,30 +77,90 @@
         <aside class="plugin-install" aria-labelledby="install-heading">
           <div class="section-title">
             <span class="terminal-icon" aria-hidden="true">&gt;_</span>
-            <h2 id="install-heading">安装插件</h2>
+            <h2 id="install-heading">安装</h2>
           </div>
-          <p class="install-note">在终端依次运行以下命令。</p>
+          <p class="install-note">选择你使用的 Agent。Claude Code 使用原生插件；Cursor 和 Codex 使用同一份开放 Skill。</p>
 
-          <ol class="install-steps">
-            <li>
-              <h3><span>01</span>添加插件市场</h3>
-              <div class="command">
-                <code data-command="install-market">claude plugin marketplace add yiso-ai/yiso-marketplace</code>
-                <button type="button" class="copy-button" data-copy aria-label="复制添加插件市场命令">复制</button>
-              </div>
-            </li>
-            <li>
-              <h3><span>02</span>安装此插件</h3>
-              <div class="command">
-                <code data-command="install-plugin">claude plugin install yisolib@yiso-marketplace</code>
-                <button type="button" class="copy-button" data-copy aria-label="复制安装插件命令">复制</button>
-              </div>
-            </li>
-          </ol>
+          <div class="agent-tabs" role="tablist" aria-label="选择安装目标">
+            <button type="button" class="agent-tab is-active" id="tab-claude" role="tab" aria-selected="true" aria-controls="panel-claude" data-agent-tab="claude">Claude Code</button>
+            <button type="button" class="agent-tab" id="tab-cursor" role="tab" aria-selected="false" aria-controls="panel-cursor" data-agent-tab="cursor" tabindex="-1">Cursor</button>
+            <button type="button" class="agent-tab" id="tab-codex" role="tab" aria-selected="false" aria-controls="panel-codex" data-agent-tab="codex" tabindex="-1">Codex</button>
+          </div>
 
-          <p class="install-hint">已添加此市场？直接运行第二条命令即可。</p>
-          <p class="install-hint">安装后在 Claude Code 中执行 <code>/reload-plugins</code>，或重新启动会话。</p>
-          <p class="install-note compat-note"><strong>标准说明：</strong>本插件市场和插件基于 Claude Code 插件标准。非 Claude Agent 安装插件时，需结合自身插件标准进行转换调整。</p>
+          <div class="agent-panel is-active" id="panel-claude" role="tabpanel" aria-labelledby="tab-claude" data-agent-panel="claude">
+            <ol class="install-steps">
+              <li>
+                <h3><span>01</span>添加插件市场</h3>
+                <div class="command">
+                  <code data-command="install-market">claude plugin marketplace add yiso-ai/yiso-marketplace</code>
+                  <button type="button" class="copy-button" data-copy aria-label="复制添加插件市场命令">复制</button>
+                </div>
+              </li>
+              <li>
+                <h3><span>02</span>安装此插件</h3>
+                <div class="command">
+                  <code data-command="install-plugin">claude plugin install yisolib@yiso-marketplace</code>
+                  <button type="button" class="copy-button" data-copy aria-label="复制安装插件命令">复制</button>
+                </div>
+              </li>
+            </ol>
+            <p class="install-hint">已添加此市场？直接运行第二条命令即可。</p>
+            <p class="install-hint">安装后执行 <code>/reload-plugins</code>，或重新启动会话。</p>
+          </div>
+
+          <div class="agent-panel" id="panel-cursor" role="tabpanel" aria-labelledby="tab-cursor" data-agent-panel="cursor" hidden>
+            <p class="agent-note">Cursor 直接加载 <code>SKILL.md</code>。装到用户目录后，在 Agent 对话输入 <code>/library</code>。</p>
+            <ol class="install-steps">
+              <li>
+                <h3><span>01</span>安装 Skill</h3>
+                <div class="command">
+                  <code data-command="install-cursor">tmp="$(mktemp -d)"
+curl -fsSL https://github.com/yiso-ai/yiso-marketplace/archive/refs/heads/main.tar.gz | tar -xz -C "$tmp" --strip-components=1
+mkdir -p ~/.cursor/skills
+cp -R "$tmp/plugins/yisolib/skills/library" ~/.cursor/skills/</code>
+                  <button type="button" class="copy-button" data-copy aria-label="复制 Cursor 安装命令">复制</button>
+                </div>
+              </li>
+              <li>
+                <h3><span>02</span>在 Cursor 中调用</h3>
+                <div class="command">
+                  <code data-command="prompt-cursor">/library 试读我指定的资料目录，先给我看拟归档清单，不要写库。</code>
+                  <button type="button" class="copy-button" data-copy aria-label="复制 Cursor 调用命令">复制</button>
+                </div>
+              </li>
+            </ol>
+            <p class="install-hint">可在 <code>Customize → Skills</code> 中确认 <code>library</code> 已加载。</p>
+          </div>
+
+          <div class="agent-panel" id="panel-codex" role="tabpanel" aria-labelledby="tab-codex" data-agent-panel="codex" hidden>
+            <p class="agent-note">Codex 使用开放 Skill 目录。推荐让内置 <code>$skill-installer</code> 从本仓库安装。</p>
+            <ol class="install-steps">
+              <li>
+                <h3><span>01</span>让 Codex 安装</h3>
+                <div class="command">
+                  <code data-command="install-codex">$skill-installer 从 https://github.com/yiso-ai/yiso-marketplace/tree/main/plugins/yisolib/skills/library 安装 library</code>
+                  <button type="button" class="copy-button" data-copy aria-label="复制 Codex 安装提示">复制</button>
+                </div>
+              </li>
+              <li>
+                <h3><span>02</span>在 Codex 中调用</h3>
+                <div class="command">
+                  <code data-command="prompt-codex">$library 试读我指定的资料目录，先给我看拟归档清单，不要写库。</code>
+                  <button type="button" class="copy-button" data-copy aria-label="复制 Codex 调用命令">复制</button>
+                </div>
+              </li>
+            </ol>
+            <details class="manual-fallback">
+              <summary>手动安装到 <code>~/.codex/skills</code></summary>
+              <div class="command">
+                <code data-command="install-codex-manual">tmp="$(mktemp -d)"
+curl -fsSL https://github.com/yiso-ai/yiso-marketplace/archive/refs/heads/main.tar.gz | tar -xz -C "$tmp" --strip-components=1
+mkdir -p ~/.codex/skills
+cp -R "$tmp/plugins/yisolib/skills/library" ~/.codex/skills/</code>
+                <button type="button" class="copy-button" data-copy>复制</button>
+              </div>
+            </details>
+          </div>
         </aside>
       </section>
 
@@ -141,7 +201,7 @@
 
             <h3>环境要求</h3>
             <ul class="plain-list">
-              <li>支持插件安装的 Claude Code。</li>
+              <li>Claude Code（插件），或 Cursor / Codex（Skill）。</li>
               <li>Python 3.10+，本地演示和随包脚本使用 Python 标准库。</li>
               <li>正式归档需要一个已配置的 Library 目标；本地模板可先用合成数据验证。</li>
               <li>插件本身不包含 API Key、邮箱账号或数据库导出。</li>
@@ -169,13 +229,13 @@ python assets/starter/starter.py serve --db /tmp/library-demo.sqlite --port 8765
             <p>这个插件没有内置 API Key 或必填服务配置。目标 Library 路径、资料来源和写入范围由你的本地环境与本轮任务确定。</p>
 
             <h3>兼容性说明</h3>
-            <p>本插件市场和插件基于 Claude Code 插件标准组织：市场清单位于 <code>.claude-plugin/marketplace.json</code>，插件清单位于 <code>plugins/yisolib/.claude-plugin/plugin.json</code>，技能入口位于 <code>plugins/yisolib/skills/library/SKILL.md</code>。非 Claude Agent 安装插件时，需结合自身插件标准转换目录结构、清单格式、组件发现规则和调用命令，不能假定可以直接安装或直接复用。</p>
+            <p>本仓库以 Claude Code 插件标准组织：市场清单位于 <code>.claude-plugin/marketplace.json</code>，插件清单位于 <code>plugins/yisolib/.claude-plugin/plugin.json</code>，技能入口位于 <code>plugins/yisolib/skills/library/SKILL.md</code>。Claude Code 可直接使用插件命令；Cursor 与 Codex 将同一份 Skill 复制到各自用户目录加载。其他 Agent 安装时仍需按自身标准转换目录、清单、组件发现规则和调用命令。</p>
 
             <h3>常见问题</h3>
             <div class="faq-list">
               <details>
                 <summary>如何确认安装成功？</summary>
-                <p>启动 <code>claude</code>，输入 <code>/yisolib:library 试读我指定的目录</code>。能进入读取和审阅流程即表示加载成功。</p>
+                <p>Claude Code 输入 <code>/yisolib:library</code>；Cursor 输入 <code>/library</code>；Codex 输入 <code>$library</code>。能进入读取和审阅流程即表示加载成功。</p>
               </details>
               <details>
                 <summary>会自动读取我的邮箱吗？</summary>
@@ -246,13 +306,15 @@ claude plugin update yisolib</code>
       <div class="container footer-inner">
         <span>Library · Yiso Plugin</span>
         <div class="footer-links">
-          <a href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener noreferrer">Claude Code 文档 ↗</a>
+          <a href="https://code.claude.com/docs/en/plugins" target="_blank" rel="noopener noreferrer">Claude Code 文档 ↗</a>
+          <a href="https://cursor.com/docs/skills" target="_blank" rel="noopener noreferrer">Cursor Skills ↗</a>
+          <a href="https://learn.chatgpt.com/docs/build-skills" target="_blank" rel="noopener noreferrer">Codex Skills ↗</a>
           <a data-repo-link href="https://github.com/yiso-ai/yiso-marketplace" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         </div>
       </div>
     </footer>
 
     <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
-    <script src="./app.js" defer></script>
+    <script src="./app.js?v=20261122-agents" defer></script>
   </body>
 </html>

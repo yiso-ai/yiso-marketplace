@@ -326,16 +326,79 @@ h1 {
   font-size: 0.85rem;
 }
 
-.compat-note {
-  margin-top: 1rem;
-  padding: 0.75rem 0.85rem;
+.agent-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.25rem;
+  margin-top: 1.2rem;
+  padding: 0.28rem;
   border: 1px solid var(--line);
-  border-left: 3px solid var(--accent);
-  border-radius: 0.4rem;
-  background: color-mix(in srgb, var(--accent) 7%, transparent);
-  color: var(--text);
-  font-size: 0.76rem;
+  border-radius: 0.7rem;
+  background: var(--surface-raised);
+}
+
+.agent-tab {
+  min-height: 2rem;
+  padding: 0.42rem 0.25rem;
+  border: 0;
+  border-radius: 0.46rem;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.67rem;
+  font-weight: 750;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.agent-tab:hover {
+  color: var(--accent);
+}
+
+.agent-tab.is-active {
+  background: var(--surface);
+  color: var(--accent-strong);
+  box-shadow: var(--shadow-soft);
+}
+
+.agent-panel {
+  margin-top: 1.15rem;
+}
+
+.agent-panel[hidden] {
+  display: none;
+}
+
+.agent-panel .install-steps {
+  margin-top: 0;
+}
+
+.agent-note {
+  margin: 0 0 1.05rem;
+  padding: 0.65rem 0.75rem;
+  border-left: 2px solid var(--accent);
+  border-radius: 0 0.4rem 0.4rem 0;
+  background: var(--accent-faint);
+  color: var(--muted);
+  font-size: 0.75rem;
   line-height: 1.6;
+}
+
+.manual-fallback {
+  margin-top: 1.1rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.9rem;
+}
+
+.manual-fallback summary {
+  color: var(--muted);
+  font-size: 0.73rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.manual-fallback .command {
+  margin-top: 0.65rem;
 }
 
 .install-steps {
@@ -427,6 +490,8 @@ h1 {
 }
 
 .install-hint code,
+.agent-note code,
+.manual-fallback summary code,
 .readme-lead code,
 .doc-section p code,
 .plain-list code,
@@ -734,6 +799,8 @@ summary:focus-visible {
 
   .command code {
     font-size: 0.7rem;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
   }
 
   .plugin-reading {
