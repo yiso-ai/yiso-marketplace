@@ -1,0 +1,20 @@
+{
+  "format": "cp-source-review-v1",
+  "review_id": "review-b",
+  "revision_id": "revision-ca9b84c9f77300c8d52a81109a254befc3ca8371ee46d0ce5d459ef0156827cb",
+  "source_content_sha256": "edca8c1faad8f1e6b62ed2d3dba56d85c4ae83e33fa5ccef57547f547bed5fcb",
+  "decision": "exclude_duplicate",
+  "reviewer": "Synthetic reviewer",
+  "reviewed_at_utc": "2026-03-02T00:00:00Z",
+  "reason": "Synthetic reviewer confirmed identical full source text already archived",
+  "full_text_read": true,
+  "semantic_review": "approved",
+  "body_mode": null,
+  "title_mode": "preserve",
+  "metadata_overrides": {},
+  "source_span": null,
+  "duplicate_of_revision_id": "revision-cdb8ee11b36e581541b813b772ba2b44d80cbce60e97dc1a099aaea6253ea2fb",
+  "previous_revision_id": null,
+  "coverage": [],
+  "batch": null
+}

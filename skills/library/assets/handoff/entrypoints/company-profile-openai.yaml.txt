@@ -1,0 +1,13 @@
+interface:
+  display_name: Company Profile
+  short_description: 从本人研究搭建私有数据库与阅读网页，支持D1归档、证据关联和迁移验收
+  default_prompt: 用 $company-profile 先用合成资料搭建我的私有研究数据库和阅读网页，再按我的授权导入材料，核验主归属、正文与双向关联。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

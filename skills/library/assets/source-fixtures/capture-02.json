@@ -1,0 +1,35 @@
+{
+  "format": "cp-source-capture-v1",
+  "capture_id": "capture-2",
+  "scope_id": "demo-files",
+  "account_namespace": "synthetic-account",
+  "source_namespace": "local-text",
+  "window_start_utc": "2026-01-01T00:00:00Z",
+  "window_end_utc": "2026-04-01T00:00:00Z",
+  "snapshot_id": "capture-2-group",
+  "pages": [
+    {
+      "index": 0,
+      "request_cursor": null,
+      "next_cursor": null,
+      "snapshot_id": "capture-2-group",
+      "total_items": 1,
+      "items": [
+        {
+          "source_key": "b.txt",
+          "source_time_utc": "2026-02-01T00:00:00Z",
+          "status": "captured",
+          "reason": null,
+          "metadata_origin": "source",
+          "title": "原始标题 b.txt",
+          "category": "internal",
+          "material_date": "2026-02-01",
+          "institution": "示例机构",
+          "display_author": "示例作者",
+          "content": "合成原文研究。\n\n保留原始分析。",
+          "content_sha256": "edca8c1faad8f1e6b62ed2d3dba56d85c4ae83e33fa5ccef57547f547bed5fcb"
+        }
+      ]
+    }
+  ]
+}

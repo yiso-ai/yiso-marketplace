@@ -1,0 +1,13 @@
+interface:
+  display_name: "library"
+  short_description: "归档本地研究并核对出处，新公司优先归入申万二级，二级不明时归入一级"
+  default_prompt: "用 $library 读取我指定的本地资料，归档到 Library，并汇报新增、重复和待处理项。"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+policy:
+  products:
+    - "chatgpt"
+    - "codex"
+    - "api"
+    - "atlas"
+  allow_implicit_invocation: true

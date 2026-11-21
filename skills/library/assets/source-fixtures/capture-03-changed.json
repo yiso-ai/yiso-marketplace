@@ -1,0 +1,35 @@
+{
+  "format": "cp-source-capture-v1",
+  "capture_id": "capture-3",
+  "scope_id": "demo-files",
+  "account_namespace": "synthetic-account",
+  "source_namespace": "local-text",
+  "window_start_utc": "2026-01-01T00:00:00Z",
+  "window_end_utc": "2026-05-01T00:00:00Z",
+  "snapshot_id": "capture-3-group",
+  "pages": [
+    {
+      "index": 0,
+      "request_cursor": null,
+      "next_cursor": null,
+      "snapshot_id": "capture-3-group",
+      "total_items": 1,
+      "items": [
+        {
+          "source_key": "a.txt",
+          "source_time_utc": "2026-02-01T00:00:00Z",
+          "status": "captured",
+          "reason": null,
+          "metadata_origin": "source",
+          "title": "原始标题 a.txt",
+          "category": "internal",
+          "material_date": "2026-02-01",
+          "institution": "示例机构",
+          "display_author": "示例作者",
+          "content": "更新后的原始研究。\n\n包含实质新信息。",
+          "content_sha256": "d9324409ed04b7c81e8122ccd294ccddeddf4c37b3cc9e6ee9f5a64f8835b30e"
+        }
+      ]
+    }
+  ]
+}

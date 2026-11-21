@@ -1,0 +1,40 @@
+---
+name: company-profile
+description: 将本人获授权研究资料整理为中文公司/行业研究数据库，搭建私有 Company Profile 前端；适用于新用户从零部署、现有档案迁移、D1-only增量归档、动态主题分类、证据关联、正文去重及恢复验证。内部原文保留、卖方高密度概括，支持文字、原生表格及按规则筛选的关键图片归档与联合恢复。
+---
+
+# Company Profile
+
+## 先选择任务和数据权威
+
+区分新建数据库/前端、迁移、试读草稿、指定材料归档、已配置增量归档、格式修订。**安装或更新技能不授权读取邮箱、恢复历史积压、定时扫描、部署生产或共享资料**。先核用户本次范围、来源与账户、目的地、当前访问权限；别人的实例必须由其本人提供资料及独立授权。
+
+- 新用户：读 [bootstrap.md](references/bootstrap.md)，从干净模板搭建自己的实例，先用合成数据验证，再导入明确授权的样本。
+- 现有项目：读取其当前私有配置、已安装发布身份、数据库 authority/config/head、完整恢复记录及本轮状态。不要固定旧版本号；配置/状态缺失或读取不完整时不能初始化空库。旧 Page/Space/站点只读保留，D1 是已切换实例唯一可写权威，不双写或自动回切。
+- 技能更新：与生产 runner 分开。技能目录不是运行时配置，不覆盖已固定的可执行发布包；版本、配置或写入协议变更须独立测试、确认切换并验收。见 [publishing.md](references/publishing.md)。
+
+本技能不含任何原用户账户、研究、生产ID、游标、锁值、凭证或授权。示例全部是合成资料。禁止把示例当实际研究或把模板测试成功称为生产就绪。
+
+## 工作流程
+
+1. **取件与范围**：按项目获授权来源、窗口、实际启动截止及全部文件夹/分页读取；不改变邮件已读状态。维护迟到/移动资料与逐项未决，不凭标题分类。遵循 [sources.md](references/sources.md)，本人目录/原生连接器capture与可运行增量流程见 [source-adapters.md](references/source-adapters.md)。不因分类缺项扩大监测名单或付费来源。
+2. **语义阅读**：只录实质研究；排除模拟组合、Action now、日常提醒及纯提及。混合资料只取研究部分，多公司按实际归属拆分。坏件隔离，继续独立且完整核验材料。
+3. **编辑与展示**：按 [editorial.md](references/editorial.md) 保留内部相关原文，卖方概括保留信息密度和原引用，不加助手判断；新闻事实与获准观点分开。保留文字、非图片原生表格及有独立实质增量的关键图表/图片表格；按 [images.md](references/images.md) 筛选、保存自足副本、关联及联合恢复，不套用旧的一律禁图/删图规则。
+4. **实体与主归属**：按 [database.md](references/database.md) 一份 canonical Memo/正文，明确且唯一的 primary_subject 绑定当前正文证据和语义审阅；不得靠首个主题、词面或排名猜归属。公司、主题检索/导航不复制正文。按 [graph-and-dedupe.md](references/graph-and-dedupe.md) 处理增量与覆盖去重。
+5. **分类与关系**：读当前完整规范。行业分类版本/路径和主题层级是不同维度；动态主题、真正同义词、主父节点、facets 及跨主题边按 [taxonomy.md](references/taxonomy.md) 维护。分类存在或行业成分股不等于研究关系证据。
+6. **私有持久化**：保存来源身份、正文哈希、语义审阅、运行计划、覆盖关系及恢复义务；遵循当前单写者/epoch/version协议。新增/变更必须同事务更新 canonical 数据、关联、索引和完成账本，读回验证后再称成功。见 [publishing.md](references/publishing.md)。
+7. **前端与验收**：前端直接读取同一数据库，普通归档不额外扫描或部署源码；保持权限不变。四栏及阅读体验见 [frontend.md](references/frontend.md)。迁移和发布执行 [acceptance.md](references/acceptance.md)，实际未执行的检查明确列出。
+8. **报告**：只报实际提交数量、范围、跳过/未决及需要用户处理的阻碍，附已验入口。无新研究遵循该实例通知设置，不自动创建提醒或定时任务。
+
+## 工具与交付边界
+
+可运行模板在 `assets/starter/`，含SQLite本地版、行业/主题与证据阅读前端，以及带服务端身份校验的Worker/D1适配。另有`pipeline_directory.py`实际读取获授权文本目录，`pipeline.py`实现capture→待审→增量写入→恢复ledger；运行方式见 [source-adapters.md](references/source-adapters.md)。部署方式及边界见 [worker-deployment.md](references/worker-deployment.md)。它**不是现有生产 runner 或自动邮件归档系统的复制品**，未经目标平台验收不能声称生产就绪。Sites 托管 D1 与自管 Cloudflare/其他数据库的区别、安装和部署步骤见 bootstrap.md。运行脚本前读文件，按照当前 Sites/技能安装官方流程操作，不使用过时命令或伪造工具。
+
+`validate_batch.py` 是旧 Page 批次格式的兼容预检，不适用新 D1 主归属或作为生产许可；`validate_taxonomy.py` 是通用离线结构预检，不证明语义、授权或远端提交成功。新模板使用自己的严格导入检查，所有检查都不能代替全文阅读和实际生产读回。
+
+## 调用示例
+
+- “用 company-profile，先用合成资料搭建我的私有数据库与同类阅读前端，验收后再导入我提供的研究。”
+- “用 company-profile 只试读这些材料，生成归档草稿，不写数据库。”
+- “用 company-profile 按当前授权归档本轮研究，核验主归属、正文、双向关联及未决项。”
+- “用 company-profile 制定旧档案到新数据库的迁移计划，先不要切换生产。”

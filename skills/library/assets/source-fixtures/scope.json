@@ -1,0 +1,8 @@
+{
+  "scope_id": "demo-files",
+  "account_namespace": "synthetic-account",
+  "source_namespace": "local-text",
+  "authorized_start_utc": "2026-01-01T00:00:00Z",
+  "authorized_end_utc": "2027-01-01T00:00:00Z",
+  "authorization_reference": "Synthetic test authorization only"
+}

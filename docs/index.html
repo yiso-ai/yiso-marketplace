@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Library 是一个 Claude Code 插件：读取本地投研资料，拆分研究事项，保留出处与证据，并归档到 Library。"
+    />
+    <title>Library · Claude Code 插件安装</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./" aria-label="Yiso Plugin 首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4.5 5.25A2.25 2.25 0 0 1 6.75 3h4.5v16.5h-4.5a2.25 2.25 0 0 0-2.25 2.25V5.25Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+              <path d="M19.5 5.25A2.25 2.25 0 0 0 17.25 3h-4.5v16.5h4.5a2.25 2.25 0 0 1 2.25 2.25V5.25Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+              <path d="m9 8.25 1.5 1.5 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span class="brand-text">
+            <strong>Yiso Plugin</strong>
+            <small>Claude Code</small>
+          </span>
+        </a>
+        <nav aria-label="站点导航">
+          <a class="header-link" data-repo-link href="https://github.com/yiso-ai/yiso-marketplace" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="container plugin-page">
+      <section class="plugin-hero" aria-label="插件概览与安装">
+        <div class="plugin-identity">
+          <p class="plugin-meta">
+            <span>PLUGIN <b>/</b> YISOLIB</span>
+            <span class="version">v0.2.0</span>
+          </p>
+          <h1>Library</h1>
+          <p class="plugin-summary">
+            读取本地投研资料，按研究事项拆成 Memo，保留出处与正文证据，并归档到 Library。
+          </p>
+          <dl class="plugin-spec">
+            <div>
+              <dt>分类</dt>
+              <dd>投研归档</dd>
+            </div>
+            <div>
+              <dt>组件</dt>
+              <dd><a href="#components-heading">90 个文件 · 1 个技能 · 14 份参考 <span>↓</span></a></dd>
+            </div>
+            <div>
+              <dt>更新</dt>
+              <dd><time datetime="2026-11-21">2026/11/21</time></dd>
+            </div>
+          </dl>
+
+          <ul class="keyword-list" aria-label="插件关键词">
+            <li>本地资料</li>
+            <li>研究 Memo</li>
+            <li>Word 增量</li>
+            <li>申万行业</li>
+            <li>证据追溯</li>
+          </ul>
+        </div>
+
+        <aside class="plugin-install" aria-labelledby="install-heading">
+          <div class="section-title">
+            <span class="terminal-icon" aria-hidden="true">&gt;_</span>
+            <h2 id="install-heading">安装插件</h2>
+          </div>
+          <p class="install-note">在终端依次运行以下命令。</p>
+
+          <ol class="install-steps">
+            <li>
+              <h3><span>01</span>添加插件市场</h3>
+              <div class="command">
+                <code data-command="install-market">claude plugin marketplace add yiso-ai/yiso-marketplace</code>
+                <button type="button" class="copy-button" data-copy aria-label="复制添加插件市场命令">复制</button>
+              </div>
+            </li>
+            <li>
+              <h3><span>02</span>安装此插件</h3>
+              <div class="command">
+                <code data-command="install-plugin">claude plugin install yisolib@yiso-marketplace</code>
+                <button type="button" class="copy-button" data-copy aria-label="复制安装插件命令">复制</button>
+              </div>
+            </li>
+          </ol>
+
+          <p class="install-hint">已添加此市场？直接运行第二条命令即可。</p>
+          <p class="install-hint">安装后在 Claude Code 中执行 <code>/reload-plugins</code>，或重新启动会话。</p>
+        </aside>
+      </section>
+
+      <div class="plugin-body">
+        <div class="plugin-reading">
+          <section class="doc-section" id="usage" aria-labelledby="readme-heading">
+            <h2 id="readme-heading">使用说明</h2>
+            <p class="readme-lead">
+              安装后，把本地资料路径交给 <code>library</code>。它先读取和审阅，明确说“归档”后才写入。
+            </p>
+
+            <h3>调用方式</h3>
+            <p>调用 <code>/yisolib:library</code>，说明文件位置和本轮任务：</p>
+
+            <div class="example-block">
+              <span>试读</span>
+              <div class="command command-light">
+                <code data-command="prompt-draft">/yisolib:library 只试读这个目录，先列出会收录的 Memo、主归属和证据，不写数据库。</code>
+                <button type="button" class="copy-button" data-copy>复制</button>
+              </div>
+            </div>
+
+            <div class="example-block">
+              <span>授权归档</span>
+              <div class="command command-light">
+                <code data-command="prompt-archive">/yisolib:library 归档这批资料；新公司按主营业务归入申万 2021 二级，无法区分二级时归入一级。</code>
+                <button type="button" class="copy-button" data-copy>复制</button>
+              </div>
+            </div>
+
+            <div class="example-block">
+              <span>Word 增量</span>
+              <div class="command command-light">
+                <code data-command="prompt-word">/yisolib:library 比对这份更新的 Word，只归档已核实的新增和修订；有候选旧稿时先让我确认。</code>
+                <button type="button" class="copy-button" data-copy>复制</button>
+              </div>
+            </div>
+
+            <h3>环境要求</h3>
+            <ul class="plain-list">
+              <li>支持插件安装的 Claude Code。</li>
+              <li>Python 3.10+，本地演示和随包脚本使用 Python 标准库。</li>
+              <li>正式归档需要一个已配置的 Library 目标；本地模板可先用合成数据验证。</li>
+              <li>插件本身不包含 API Key、邮箱账号或数据库导出。</li>
+            </ul>
+
+            <h3>本地合成演示</h3>
+            <p>在插件源码的 <code>skills/library</code> 目录下运行，不会读取真实研究：</p>
+            <div class="command command-block">
+              <code data-command="demo">python assets/starter/starter.py init --db /tmp/library-demo.sqlite
+python assets/starter/starter.py import --db /tmp/library-demo.sqlite --input assets/starter/fixture.json
+python assets/starter/starter.py serve --db /tmp/library-demo.sqlite --port 8765</code>
+              <button type="button" class="copy-button" data-copy>复制</button>
+            </div>
+            <p class="small-note">打开 <code>http://127.0.0.1:8765</code>。模板只绑定本机地址，使用合成数据。</p>
+
+            <h3>安全边界</h3>
+            <ul class="plain-list">
+              <li>只读取本次任务明确给出的文件或文件夹，不自动扩大范围。</li>
+              <li>“试读”“预览”“查重”不会写入数据库；明确“归档”后才进入写入和回执。</li>
+              <li>关键图片可以保存，但不把 OCR 结果冒充原生文字。</li>
+              <li>数据库、出处记录和图片默认留在本地或你配置的私有环境。</li>
+            </ul>
+
+            <h3>配置项</h3>
+            <p>这个插件没有内置 API Key 或必填服务配置。目标 Library 路径、资料来源和写入范围由你的本地环境与本轮任务确定。</p>
+
+            <h3>常见问题</h3>
+            <div class="faq-list">
+              <details>
+                <summary>如何确认安装成功？</summary>
+                <p>启动 <code>claude</code>，输入 <code>/yisolib:library 试读我指定的目录</code>。能进入读取和审阅流程即表示加载成功。</p>
+              </details>
+              <details>
+                <summary>会自动读取我的邮箱吗？</summary>
+                <p>不会。Library 只处理你给出的本地路径。邮箱或云端来源需要由你的原生连接器单独读取，再作为明确输入交给 Library。</p>
+              </details>
+              <details>
+                <summary>没有 <code>claude plugin</code> 命令时怎么安装？</summary>
+                <p>可以下载仓库，只复制其中的 <code>skills/library</code>。此方式下直接调用 <code>/library</code>。</p>
+                <div class="command command-light">
+                  <code data-command="install-tarball">tmp="$(mktemp -d)"
+curl -fsSL https://github.com/yiso-ai/yiso-marketplace/archive/refs/heads/main.tar.gz | tar -xz -C "$tmp" --strip-components=1
+mkdir -p ~/.claude/skills
+cp -R "$tmp/skills/library" ~/.claude/skills/</code>
+                  <button type="button" class="copy-button" data-copy>复制</button>
+                </div>
+              </details>
+              <details>
+                <summary>如何更新和卸载？</summary>
+                <div class="command command-light">
+                  <code data-command="update">claude plugin marketplace update
+claude plugin update yisolib</code>
+                  <button type="button" class="copy-button" data-copy>复制</button>
+                </div>
+                <div class="command command-light">
+                  <code data-command="uninstall">claude plugin uninstall yisolib</code>
+                  <button type="button" class="copy-button" data-copy>复制</button>
+                </div>
+              </details>
+            </div>
+          </section>
+        </div>
+
+        <aside class="plugin-components" aria-labelledby="components-heading">
+          <h2 id="components-heading">包含组件 <span>90</span></h2>
+
+          <section class="component-group">
+            <h3>技能 <span>1</span></h3>
+            <article class="component-item">
+              <h4>library</h4>
+              <p>读取本地投研资料，拆分研究事项，保留出处与证据，并归档到 Library。</p>
+            </article>
+          </section>
+
+          <section class="component-group">
+            <h3>参考文档 <span>14</span></h3>
+            <p>本地工作流、编辑规则、数据库、图片、行业、主题图谱、前端和验收。</p>
+          </section>
+
+          <section class="component-group">
+            <h3>脚本与回归 <span>25</span></h3>
+            <p>来源扫描、批次准备、写入核验、Word 比对、图片和数据库快照检查。</p>
+          </section>
+
+          <section class="component-group">
+            <h3>Starter <span>13</span></h3>
+            <p>可运行 SQLite 模板、合成 fixture、四栏阅读界面和原生表格示例。</p>
+          </section>
+
+          <section class="component-group">
+            <h3>配置项</h3>
+            <p>无内置 API Key。真实资料读取和写入目标按本机环境与本轮任务单独确认。</p>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>Library · Yiso Plugin</span>
+        <div class="footer-links">
+          <a href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener noreferrer">Claude Code 文档 ↗</a>
+          <a data-repo-link href="https://github.com/yiso-ai/yiso-marketplace" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+    <script src="./app.js" defer></script>
+  </body>
+</html>

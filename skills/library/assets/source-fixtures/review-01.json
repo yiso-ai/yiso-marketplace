@@ -1,0 +1,61 @@
+{
+  "format": "cp-source-review-v1",
+  "review_id": "review-1",
+  "revision_id": "revision-cdb8ee11b36e581541b813b772ba2b44d80cbce60e97dc1a099aaea6253ea2fb",
+  "source_content_sha256": "edca8c1faad8f1e6b62ed2d3dba56d85c4ae83e33fa5ccef57547f547bed5fcb",
+  "decision": "approve",
+  "reviewer": "Synthetic reviewer",
+  "reviewed_at_utc": "2026-03-02T00:00:00Z",
+  "reason": "Synthetic explicit complete text review",
+  "full_text_read": true,
+  "semantic_review": "approved",
+  "body_mode": "verbatim",
+  "title_mode": "preserve",
+  "metadata_overrides": {},
+  "source_span": null,
+  "duplicate_of_revision_id": null,
+  "previous_revision_id": null,
+  "coverage": [],
+  "batch": {
+    "batch_id": "batch-19f365a95185035965832eb2ea072ba6",
+    "expected_version": 0,
+    "subjects": [
+      {
+        "id": "demo-subject",
+        "name": "合成公司",
+        "kind": "company"
+      }
+    ],
+    "memos": [
+      {
+        "title": "原始标题 a.txt",
+        "category": "internal",
+        "material_date": "2026-02-01",
+        "institution": "示例机构",
+        "display_author": "示例作者",
+        "id": "memo-d29285489e85c6ffd8f396cbde5cb459",
+        "source_key": "source-cdb8ee11b36e581541b813b772ba2b44",
+        "author_private": null,
+        "body": "合成原文研究。\n\n保留原始分析。",
+        "sha256": "edca8c1faad8f1e6b62ed2d3dba56d85c4ae83e33fa5ccef57547f547bed5fcb",
+        "primary_subject": "demo-subject",
+        "assignments": [
+          {
+            "subject_id": "demo-subject",
+            "scope": "primary",
+            "start": 0,
+            "end": 4,
+            "quote": "合成原文"
+          }
+        ],
+        "tables": []
+      }
+    ],
+    "industry_versions": [],
+    "industries": [],
+    "company_industries": [],
+    "theme_parents": [],
+    "theme_aliases": [],
+    "theme_crosslinks": []
+  }
+}

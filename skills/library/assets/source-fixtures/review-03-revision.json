@@ -1,0 +1,67 @@
+{
+  "format": "cp-source-review-v1",
+  "review_id": "review-revision",
+  "revision_id": "revision-553ab563104619fdc403520e8e80e514afe311cbe84e50467616c49f26145f33",
+  "source_content_sha256": "d9324409ed04b7c81e8122ccd294ccddeddf4c37b3cc9e6ee9f5a64f8835b30e",
+  "decision": "approve_revision",
+  "reviewer": "Synthetic reviewer",
+  "reviewed_at_utc": "2026-03-02T00:00:00Z",
+  "reason": "Synthetic explicit complete text review",
+  "full_text_read": true,
+  "semantic_review": "approved",
+  "body_mode": "verbatim",
+  "title_mode": "preserve",
+  "metadata_overrides": {},
+  "source_span": null,
+  "duplicate_of_revision_id": null,
+  "previous_revision_id": "revision-cdb8ee11b36e581541b813b772ba2b44d80cbce60e97dc1a099aaea6253ea2fb",
+  "coverage": [
+    {
+      "covered_revision_id": "revision-cdb8ee11b36e581541b813b772ba2b44d80cbce60e97dc1a099aaea6253ea2fb",
+      "kind": "partially_covered",
+      "reason": "Synthetic new information retained; older memo remains visible"
+    }
+  ],
+  "batch": {
+    "batch_id": "batch-88b7d76865ac445123d1adb83bf4e8e0",
+    "expected_version": 1,
+    "subjects": [
+      {
+        "id": "demo-subject",
+        "name": "合成公司",
+        "kind": "company"
+      }
+    ],
+    "memos": [
+      {
+        "title": "原始标题 a.txt",
+        "category": "internal",
+        "material_date": "2026-02-01",
+        "institution": "示例机构",
+        "display_author": "示例作者",
+        "id": "memo-53b690d6cf80a38c7f85d2dc07f3ea7a",
+        "source_key": "source-553ab563104619fdc403520e8e80e514",
+        "author_private": null,
+        "body": "更新后的原始研究。\n\n包含实质新信息。",
+        "sha256": "d9324409ed04b7c81e8122ccd294ccddeddf4c37b3cc9e6ee9f5a64f8835b30e",
+        "primary_subject": "demo-subject",
+        "assignments": [
+          {
+            "subject_id": "demo-subject",
+            "scope": "primary",
+            "start": 0,
+            "end": 4,
+            "quote": "更新后的"
+          }
+        ],
+        "tables": []
+      }
+    ],
+    "industry_versions": [],
+    "industries": [],
+    "company_industries": [],
+    "theme_parents": [],
+    "theme_aliases": [],
+    "theme_crosslinks": []
+  }
+}

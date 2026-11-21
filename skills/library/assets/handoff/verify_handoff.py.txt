@@ -1,0 +1,11 @@
+import pathlib,json,hashlib
+r=pathlib.Path(__file__).resolve().parent
+m=json.loads((r/'MANIFEST.json').read_text('utf-8'))
+expected={f['path'] for f in m['files']}
+actual={p.relative_to(r).as_posix() for p in r.rglob('*') if p.is_file()}
+if actual!=expected|{'MANIFEST.json'}:raise RuntimeError('unexpected or missing files')
+for f in m['files']:
+ p=r/f['path'];b=p.read_bytes()
+ if hashlib.sha256(b).hexdigest()!=f['sha256']:raise RuntimeError('hash mismatch '+f['path'])
+ if p.suffix=='.py':compile(b,f['path'],'exec')
+print('PASS: hashes and Python syntax only; no production module imported/executed')

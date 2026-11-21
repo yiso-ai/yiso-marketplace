@@ -1,0 +1,12 @@
+{
+  "reference_only": true,
+  "memos": 0,
+  "receipts": 0,
+  "generation": 0,
+  "mode": "paused",
+  "database_sha256": "REDACTED",
+  "checkpoint_sha256": "REDACTED",
+  "not_live_status": true,
+  "no_import_or_replay": true,
+  "sanitized": true
+}

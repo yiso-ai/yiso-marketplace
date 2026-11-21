@@ -1,0 +1,231 @@
+{
+  "imports": {
+    "company-profile/assets/starter/starter.py": [
+      "argparse",
+      "datetime",
+      "hashlib",
+      "http",
+      "json",
+      "pathlib",
+      "re",
+      "sqlite3",
+      "urllib"
+    ],
+    "company-profile/assets/starter/worker/scripts/sqlite_bridge.py": [
+      "json",
+      "sqlite3",
+      "sys"
+    ],
+    "company-profile/scripts/pipeline.py": [
+      "argparse",
+      "datetime",
+      "hashlib",
+      "importlib",
+      "json",
+      "pathlib",
+      "sqlite3"
+    ],
+    "company-profile/scripts/pipeline_directory.py": [
+      "argparse",
+      "datetime",
+      "os",
+      "pathlib",
+      "pipeline",
+      "stat"
+    ],
+    "company-profile/scripts/test_pipeline.py": [
+      "copy",
+      "json",
+      "os",
+      "pathlib",
+      "pipeline",
+      "pipeline_directory",
+      "sqlite3",
+      "tempfile",
+      "unittest"
+    ],
+    "company-profile/scripts/test_skill_contract.py": [
+      "pathlib",
+      "re",
+      "unittest"
+    ],
+    "company-profile/scripts/test_snapshot.py": [
+      "pathlib",
+      "sqlite3",
+      "tempfile",
+      "unittest",
+      "verify_sqlite_snapshot"
+    ],
+    "company-profile/scripts/test_starter.py": [
+      "copy",
+      "importlib",
+      "json",
+      "pathlib",
+      "socket",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "time",
+      "unittest",
+      "urllib"
+    ],
+    "company-profile/scripts/test_validate_batch.py": [
+      "copy",
+      "unittest",
+      "validate_batch"
+    ],
+    "company-profile/scripts/test_validate_taxonomy.py": [
+      "copy",
+      "unittest",
+      "validate_taxonomy"
+    ],
+    "company-profile/scripts/validate_batch.py": [
+      "datetime",
+      "json",
+      "re",
+      "sys"
+    ],
+    "company-profile/scripts/validate_taxonomy.py": [
+      "json",
+      "sys",
+      "unicodedata"
+    ],
+    "company-profile/scripts/verify_sqlite_snapshot.py": [
+      "argparse",
+      "hashlib",
+      "json",
+      "pathlib",
+      "sqlite3"
+    ],
+    "production/runtime/archiver.py": [
+      "argparse",
+      "datetime",
+      "extensions",
+      "hashlib",
+      "image_assets",
+      "json",
+      "new_entities",
+      "os",
+      "pathlib",
+      "primary_subject",
+      "re",
+      "sqlite3",
+      "stat",
+      "sys",
+      "uuid",
+      "xml",
+      "zipfile"
+    ],
+    "production/runtime/controlled_writer.py": [
+      "archiver",
+      "argparse",
+      "contextlib",
+      "image_assets",
+      "json",
+      "new_entities",
+      "os",
+      "pathlib",
+      "primary_subject",
+      "sqlite3",
+      "sys",
+      "uuid"
+    ],
+    "production/runtime/extensions.py": [
+      "hashlib",
+      "json",
+      "re"
+    ],
+    "production/runtime/image_assets.py": [
+      "archiver",
+      "base64",
+      "collections",
+      "datetime",
+      "extensions",
+      "hashlib",
+      "io",
+      "json",
+      "os",
+      "pathlib",
+      "posixpath",
+      "primary_subject",
+      "re",
+      "sqlite3",
+      "stat",
+      "struct",
+      "subprocess",
+      "time",
+      "uuid",
+      "xml",
+      "zipfile",
+      "zlib"
+    ],
+    "production/runtime/new_entities.py": [
+      "datetime",
+      "hashlib",
+      "json",
+      "re",
+      "unicodedata"
+    ],
+    "production/runtime/primary_subject.py": [
+      "hashlib",
+      "json",
+      "sqlite3"
+    ],
+    "production/text-v4c2/parameterized-text-scheduler-crossbookmark-v4c2.py": [
+      "archiver",
+      "argparse",
+      "contextlib",
+      "controlled_writer",
+      "hashlib",
+      "image_assets",
+      "importlib",
+      "io",
+      "json",
+      "os",
+      "pathlib",
+      "re",
+      "sys",
+      "uuid",
+      "zipfile"
+    ],
+    "production/text-v4c2/literal_entity_gate.py": [
+      "archiver",
+      "json",
+      "new_entities"
+    ],
+    "production/text-v4c2/navigation_bookmarks.py": [
+      "image_assets",
+      "re"
+    ],
+    "production/mode/mode-transition-v3.py": [
+      "archiver",
+      "contextlib",
+      "json",
+      "os",
+      "pathlib",
+      "uuid"
+    ],
+    "production/single-png-v4/existing-image-scheduler-v4.py": [
+      "archiver",
+      "argparse",
+      "contextlib",
+      "controlled_writer",
+      "hashlib",
+      "image_assets",
+      "importlib",
+      "io",
+      "json",
+      "os",
+      "pathlib",
+      "re",
+      "sys",
+      "uuid",
+      "zipfile"
+    ],
+    "production/single-png-v4/navigation_bookmarks.py": [
+      "image_assets",
+      "re"
+    ]
+  },
+  "validation": "Python syntax only, no imports executed; external/dynamic execution not tested"
+}

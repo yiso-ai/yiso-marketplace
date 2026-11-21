@@ -1,0 +1,265 @@
+{
+  "batch_id": "demo-batch",
+  "expected_version": 0,
+  "subjects": [
+    {
+      "id": "demo-company-a",
+      "name": "示例晨光研究公司",
+      "kind": "company"
+    },
+    {
+      "id": "demo-company-b",
+      "name": "示例蓝河公司",
+      "kind": "company"
+    },
+    {
+      "id": "demo-theme",
+      "name": "示例先进制造主题",
+      "kind": "theme"
+    },
+    {
+      "id": "demo-domain",
+      "name": "示例产业领域",
+      "kind": "theme"
+    },
+    {
+      "id": "demo-secondary-theme",
+      "name": "示例机器人主题",
+      "kind": "theme"
+    }
+  ],
+  "memos": [
+    {
+      "id": "demo-memo-0",
+      "title": "合成示例研究 1",
+      "category": "internal",
+      "material_date": "2026-01-12",
+      "body": "纯合成研究示例，不代表任何真实企业。\n\n• 假设：本示例仅演示资料归档。\n  • 数据均为虚构。\n\n风险：不能用于投资决策。",
+      "sha256": "35dc1dbc5f688dd1ef79fadf75eacbeffc100cced010f2c5429698839bea8c58",
+      "primary_subject": "demo-company-a",
+      "source_key": "demo-source-0",
+      "assignments": [
+        {
+          "subject_id": "demo-company-a",
+          "scope": "primary",
+          "start": 0,
+          "end": 7,
+          "quote": "纯合成研究示例"
+        },
+        {
+          "subject_id": "demo-theme",
+          "scope": "substantive",
+          "start": 0,
+          "end": 7,
+          "quote": "纯合成研究示例"
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "虚构指标",
+            "示例值"
+          ],
+          "rows": [
+            [
+              "样例数量",
+              "10"
+            ],
+            [
+              "样例备注",
+              "非真实资料"
+            ]
+          ]
+        }
+      ],
+      "institution": "示例虚构研究机构",
+      "author_private": "合成作者仅后台",
+      "display_author": "示例研究员"
+    },
+    {
+      "id": "demo-memo-1",
+      "title": "合成示例研究 2",
+      "category": "sellside",
+      "material_date": "2026-02-12",
+      "body": "纯合成研究示例，不代表任何真实企业。\n\n• 假设：本示例仅演示资料归档。\n  • 数据均为虚构。\n\n风险：不能用于投资决策。",
+      "sha256": "35dc1dbc5f688dd1ef79fadf75eacbeffc100cced010f2c5429698839bea8c58",
+      "primary_subject": "demo-company-a",
+      "source_key": "demo-source-1",
+      "assignments": [
+        {
+          "subject_id": "demo-company-a",
+          "scope": "primary",
+          "start": 0,
+          "end": 7,
+          "quote": "纯合成研究示例"
+        },
+        {
+          "subject_id": "demo-theme",
+          "scope": "substantive",
+          "start": 0,
+          "end": 7,
+          "quote": "纯合成研究示例"
+        }
+      ],
+      "tables": [],
+      "institution": "示例虚构研究机构",
+      "author_private": "合成作者仅后台",
+      "display_author": null
+    },
+    {
+      "id": "demo-memo-2",
+      "title": "合成示例研究 3",
+      "category": "news",
+      "material_date": "2026-03-12",
+      "body": "纯合成研究示例，不代表任何真实企业。\n\n• 假设：本示例仅演示资料归档。\n  • 数据均为虚构。\n\n风险：不能用于投资决策。",
+      "sha256": "35dc1dbc5f688dd1ef79fadf75eacbeffc100cced010f2c5429698839bea8c58",
+      "primary_subject": "demo-company-a",
+      "source_key": "demo-source-2",
+      "assignments": [
+        {
+          "subject_id": "demo-company-a",
+          "scope": "primary",
+          "start": 0,
+          "end": 7,
+          "quote": "纯合成研究示例"
+        },
+        {
+          "subject_id": "demo-theme",
+          "scope": "substantive",
+          "start": 0,
+          "end": 7,
+          "quote": "纯合成研究示例"
+        }
+      ],
+      "tables": [],
+      "institution": "示例虚构研究机构",
+      "author_private": "合成作者仅后台",
+      "display_author": null
+    },
+    {
+      "id": "demo-memo-3",
+      "title": "合成示例研究 4",
+      "category": "internal",
+      "material_date": "2026-04-12",
+      "body": "纯合成研究示例，不代表任何真实企业。\n\n• 假设：本示例仅演示资料归档。\n  • 数据均为虚构。\n\n风险：不能用于投资决策。",
+      "sha256": "35dc1dbc5f688dd1ef79fadf75eacbeffc100cced010f2c5429698839bea8c58",
+      "primary_subject": "demo-company-b",
+      "source_key": "demo-source-3",
+      "assignments": [
+        {
+          "subject_id": "demo-company-b",
+          "scope": "primary",
+          "start": 0,
+          "end": 7,
+          "quote": "纯合成研究示例"
+        },
+        {
+          "subject_id": "demo-company-a",
+          "scope": "substantive",
+          "start": 0,
+          "end": 7,
+          "quote": "纯合成研究示例"
+        }
+      ],
+      "tables": [],
+      "institution": "示例虚构研究机构",
+      "author_private": "合成作者仅后台",
+      "display_author": "示例研究员"
+    },
+    {
+      "id": "demo-memo-4",
+      "title": "合成示例研究 5",
+      "category": "internal",
+      "material_date": "2026-05-12",
+      "body": "纯合成研究示例，不代表任何真实企业。\n\n• 假设：本示例仅演示资料归档。\n  • 数据均为虚构。\n\n风险：不能用于投资决策。",
+      "sha256": "35dc1dbc5f688dd1ef79fadf75eacbeffc100cced010f2c5429698839bea8c58",
+      "primary_subject": "demo-theme",
+      "source_key": "demo-source-4",
+      "assignments": [
+        {
+          "subject_id": "demo-theme",
+          "scope": "primary",
+          "start": 0,
+          "end": 7,
+          "quote": "纯合成研究示例"
+        },
+        {
+          "subject_id": "demo-company-a",
+          "scope": "substantive",
+          "start": 0,
+          "end": 7,
+          "quote": "纯合成研究示例"
+        }
+      ],
+      "tables": [],
+      "institution": "示例虚构研究机构",
+      "author_private": "合成作者仅后台",
+      "display_author": "示例研究员"
+    }
+  ],
+  "industry_versions": [
+    {
+      "id": "demo-taxonomy",
+      "scheme": "FICTIONAL",
+      "version": "2026-demo"
+    }
+  ],
+  "industries": [
+    {
+      "id": "demo-industry-1",
+      "version_id": "demo-taxonomy",
+      "name": "虚构工业",
+      "level": 1,
+      "parent_id": null
+    },
+    {
+      "id": "demo-industry-2",
+      "version_id": "demo-taxonomy",
+      "name": "虚构设备",
+      "level": 2,
+      "parent_id": "demo-industry-1"
+    },
+    {
+      "id": "demo-industry-3",
+      "version_id": "demo-taxonomy",
+      "name": "虚构精密设备",
+      "level": 3,
+      "parent_id": "demo-industry-2"
+    }
+  ],
+  "company_industries": [
+    {
+      "company_id": "demo-company-a",
+      "industry_id": "demo-industry-3",
+      "mapping_kind": "research_mapping"
+    },
+    {
+      "company_id": "demo-company-b",
+      "industry_id": "demo-industry-3",
+      "mapping_kind": "official"
+    }
+  ],
+  "theme_parents": [
+    {
+      "child_id": "demo-theme",
+      "parent_id": "demo-domain"
+    },
+    {
+      "child_id": "demo-secondary-theme",
+      "parent_id": "demo-theme"
+    }
+  ],
+  "theme_aliases": [
+    {
+      "theme_id": "demo-theme",
+      "alias": "示例制造业"
+    }
+  ],
+  "theme_crosslinks": [
+    {
+      "source_id": "demo-secondary-theme",
+      "target_id": "demo-domain",
+      "reason": "纯合成示例跨主题联系"
+    }
+  ]
+}

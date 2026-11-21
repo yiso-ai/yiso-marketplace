@@ -1,0 +1,23 @@
+{
+  "scope_id": "demo-files",
+  "scan_cursor": "2026-05-01T00:00:00Z",
+  "completion_cursor": "2026-05-01T00:00:00Z",
+  "gaps": [],
+  "revisions": [
+    {
+      "id": "revision-cdb8ee11b36e581541b813b772ba2b44d80cbce60e97dc1a099aaea6253ea2fb",
+      "source_key": "a.txt",
+      "content_sha256": "edca8c1faad8f1e6b62ed2d3dba56d85c4ae83e33fa5ccef57547f547bed5fcb"
+    },
+    {
+      "id": "revision-ca9b84c9f77300c8d52a81109a254befc3ca8371ee46d0ce5d459ef0156827cb",
+      "source_key": "b.txt",
+      "content_sha256": "edca8c1faad8f1e6b62ed2d3dba56d85c4ae83e33fa5ccef57547f547bed5fcb"
+    },
+    {
+      "id": "revision-553ab563104619fdc403520e8e80e514afe311cbe84e50467616c49f26145f33",
+      "source_key": "a.txt",
+      "content_sha256": "d9324409ed04b7c81e8122ccd294ccddeddf4c37b3cc9e6ee9f5a64f8835b30e"
+    }
+  ]
+}

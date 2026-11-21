@@ -1,0 +1,425 @@
+{
+  "protocol": "combined-skill-production-handoff-v1",
+  "skill_files": 49,
+  "production_modules": 12,
+  "not_one_click_import": true,
+  "uuid_note": "fixed target safety identifier intentionally retained, not credential",
+  "files": [
+    {
+      "path": "README-先读-中文.md",
+      "bytes": 2861,
+      "sha256": "b9fefe9b104edede1c829d5f273b0170b4bafdf7cbc7c1954a86bf32dea14c6f",
+      "origin": "generated handoff documentation"
+    },
+    {
+      "path": "STATE-REDACTED.json",
+      "bytes": 246,
+      "sha256": "4e8ff69a257d6151e01cb45682cbf5b4d5abf003fbafdc775131288bdad075b4",
+      "origin": "generated handoff documentation"
+    },
+    {
+      "path": "STATIC-DEPENDENCIES.json",
+      "bytes": 4542,
+      "sha256": "80f279754e99d97c1f38e9ccd6ab7176aa6dd437f9ee2d8bb2facd82e800a68c",
+      "origin": "generated handoff documentation"
+    },
+    {
+      "path": "cloud-original/MANIFEST.json",
+      "bytes": 9034,
+      "sha256": "6843e20b50cc9a92c18d6a06d1d4e790e9846b0c7fb779ee73a8b17af88df913",
+      "origin": "cloud provenance, historical skill-only notice"
+    },
+    {
+      "path": "cloud-original/README-CODEX-中文.md",
+      "bytes": 2701,
+      "sha256": "785dc685dfcb996a31324a528b882b160720fe9926efdaf8a3e5e3b7d99f4052",
+      "origin": "cloud provenance, historical skill-only notice"
+    },
+    {
+      "path": "cloud-original/VALIDATION.txt",
+      "bytes": 566,
+      "sha256": "7800ccea50ef8ead522f7449438e23a528e648c34a571a5138eeebab2c8e9fbc",
+      "origin": "cloud provenance, historical skill-only notice"
+    },
+    {
+      "path": "company-profile/SKILL.md",
+      "bytes": 5975,
+      "sha256": "9ae6f92902a908033f62e341723bc27a6ad5107525251789039aa482062ff6aa",
+      "origin": "cloud:company-profile/SKILL.md"
+    },
+    {
+      "path": "company-profile/agents/openai.yaml",
+      "bytes": 501,
+      "sha256": "11e26e7fde1a624d3e0a91c002eb431e40345462b4d224052318c05ecb920f9f",
+      "origin": "cloud:company-profile/agents/openai.yaml"
+    },
+    {
+      "path": "company-profile/assets/icon.svg",
+      "bytes": 420,
+      "sha256": "e9301497fa98ef56aaca7ede0857b9a18dc06c34040f0679c609a6bf49b1d38b",
+      "origin": "cloud:company-profile/assets/icon.svg"
+    },
+    {
+      "path": "company-profile/assets/source-fixtures/capture-01.json",
+      "bytes": 1746,
+      "sha256": "857c63b6fa092a579dbba80d5b9811728febb565dde85855f0ba720584a65d57",
+      "origin": "cloud:company-profile/assets/source-fixtures/capture-01.json"
+    },
+    {
+      "path": "company-profile/assets/source-fixtures/capture-02.json",
+      "bytes": 1065,
+      "sha256": "bf9283c64980f9f181ea654a367c4f521352a5106806ba68e77d2b04f0fbe281",
+      "origin": "cloud:company-profile/assets/source-fixtures/capture-02.json"
+    },
+    {
+      "path": "company-profile/assets/source-fixtures/capture-03-changed.json",
+      "bytes": 1074,
+      "sha256": "a69d270ba18e06aace73925f0b815a6230db331acca74c49c29fb75acc9f0372",
+      "origin": "cloud:company-profile/assets/source-fixtures/capture-03-changed.json"
+    },
+    {
+      "path": "company-profile/assets/source-fixtures/expected-status.json",
+      "bytes": 819,
+      "sha256": "2f7dcbb5f0c77c4291b92bba754cf7eb01e7d39b54d78d6686f172aaa75c7595",
+      "origin": "cloud:company-profile/assets/source-fixtures/expected-status.json"
+    },
+    {
+      "path": "company-profile/assets/source-fixtures/review-01.json",
+      "bytes": 1868,
+      "sha256": "6d41a889f75a44a27ca991e1375a3af36122f275748170ea5bea37e3a472590a",
+      "origin": "cloud:company-profile/assets/source-fixtures/review-01.json"
+    },
+    {
+      "path": "company-profile/assets/source-fixtures/review-02-duplicate.json",
+      "bytes": 790,
+      "sha256": "d39b3c221cde49014ad8f9aee5aa939c9e8aec7ff4f7a15575cf7b0068b3f8ae",
+      "origin": "cloud:company-profile/assets/source-fixtures/review-02-duplicate.json"
+    },
+    {
+      "path": "company-profile/assets/source-fixtures/review-03-revision.json",
+      "bytes": 2201,
+      "sha256": "279932cceb50da88faa4a0b89f1aa820f5d8043b110b616d482a2544250880ef",
+      "origin": "cloud:company-profile/assets/source-fixtures/review-03-revision.json"
+    },
+    {
+      "path": "company-profile/assets/source-fixtures/scope.json",
+      "bytes": 274,
+      "sha256": "5b7c03fbd491936e906251da4671f1e079388cfe4b24281cde763e9350bfbf2c",
+      "origin": "cloud:company-profile/assets/source-fixtures/scope.json"
+    },
+    {
+      "path": "company-profile/assets/source-fixtures/text-input/sample-a.txt",
+      "bytes": 68,
+      "sha256": "97b0247360f2772ca825902544b9e62b90114a13dcbb84cb1497d0a3893af89d",
+      "origin": "cloud:company-profile/assets/source-fixtures/text-input/sample-a.txt"
+    },
+    {
+      "path": "company-profile/assets/source-fixtures/text-input/sample-b.md",
+      "bytes": 62,
+      "sha256": "ff9420cca023cfb397a11c4a99abcc1c17f0811fad945adb03dc41d05f22b5e0",
+      "origin": "cloud:company-profile/assets/source-fixtures/text-input/sample-b.md"
+    },
+    {
+      "path": "company-profile/assets/starter/app.js",
+      "bytes": 8505,
+      "sha256": "b9f681175a636ba59341cfc6a1adde7c28c890dc1b8ef786976c0ce400f5e5df",
+      "origin": "cloud:company-profile/assets/starter/app.js"
+    },
+    {
+      "path": "company-profile/assets/starter/fixture.json",
+      "bytes": 7528,
+      "sha256": "698b8620d8b2de0cbd3d0644f6a64f68ff07abf94cb429ef64834f92ba7a48e3",
+      "origin": "cloud:company-profile/assets/starter/fixture.json"
+    },
+    {
+      "path": "company-profile/assets/starter/index.html",
+      "bytes": 1362,
+      "sha256": "5a0121adc4e24b44fb4448696c93488d314a6a9c6a0de2f097222a68c62cb80b",
+      "origin": "cloud:company-profile/assets/starter/index.html"
+    },
+    {
+      "path": "company-profile/assets/starter/schema.sql",
+      "bytes": 2996,
+      "sha256": "ad6d39de2a3cefb8f54dc70b87637e37879cdc46009a91f9daf8f337b0d5d091",
+      "origin": "cloud:company-profile/assets/starter/schema.sql"
+    },
+    {
+      "path": "company-profile/assets/starter/starter.py",
+      "bytes": 12826,
+      "sha256": "a3be83771ed3e3bb02bbcc2a8975b64f1dda286def1fc6e8482efa5bbdb177e3",
+      "origin": "cloud:company-profile/assets/starter/starter.py"
+    },
+    {
+      "path": "company-profile/assets/starter/style.css",
+      "bytes": 2236,
+      "sha256": "8247d9708dd4fde876096e5c02a6d4ca03e47a8abe59bf78c748007fae675491",
+      "origin": "cloud:company-profile/assets/starter/style.css"
+    },
+    {
+      "path": "company-profile/assets/starter/worker/bootstrap.sql",
+      "bytes": 132,
+      "sha256": "c96e7409c8eedbf8a72b772417b872b009be90aef95b3d4ce18b443f409e73c1",
+      "origin": "cloud:company-profile/assets/starter/worker/bootstrap.sql"
+    },
+    {
+      "path": "company-profile/assets/starter/worker/build.mjs",
+      "bytes": 1118,
+      "sha256": "844e4314ff15a215bf8cc58861d58ecbe853a2da99f1b0f93503f60d53945c4c",
+      "origin": "cloud:company-profile/assets/starter/worker/build.mjs"
+    },
+    {
+      "path": "company-profile/assets/starter/worker/index.mjs",
+      "bytes": 15669,
+      "sha256": "352074eef10f457b0a3c2d869290ae0d591105b7437aa9fc96f647dece12dd9c",
+      "origin": "cloud:company-profile/assets/starter/worker/index.mjs"
+    },
+    {
+      "path": "company-profile/assets/starter/worker/migrations/0001_initial.sql",
+      "bytes": 3065,
+      "sha256": "f2deb8407a78090cefca42f9f0487346cb61f53c1feed6813ade6e34e8485ce4",
+      "origin": "cloud:company-profile/assets/starter/worker/migrations/0001_initial.sql"
+    },
+    {
+      "path": "company-profile/assets/starter/worker/scripts/generate_migration.mjs",
+      "bytes": 484,
+      "sha256": "1aa53307aa461613ece294eafc7f0d7a1189a6344c81705f92528ae0f6411878",
+      "origin": "cloud:company-profile/assets/starter/worker/scripts/generate_migration.mjs"
+    },
+    {
+      "path": "company-profile/assets/starter/worker/scripts/sqlite_bridge.py",
+      "bytes": 638,
+      "sha256": "a1c8d59bdb09677e2b14d0c9c150fd7f82443f255e58be76ba98a03e0866885c",
+      "origin": "cloud:company-profile/assets/starter/worker/scripts/sqlite_bridge.py"
+    },
+    {
+      "path": "company-profile/assets/starter/worker/scripts/test_worker.mjs",
+      "bytes": 7977,
+      "sha256": "bc74cb83f116e81da19a45a74d42ec220de7f98fbc72fc66ad20b1a3e75b82c5",
+      "origin": "cloud:company-profile/assets/starter/worker/scripts/test_worker.mjs"
+    },
+    {
+      "path": "company-profile/references/acceptance.md",
+      "bytes": 4234,
+      "sha256": "109419fc30f104c90bde154a65c1d06711951b8b7f7ccb73dafd0ba7b6191a86",
+      "origin": "cloud:company-profile/references/acceptance.md"
+    },
+    {
+      "path": "company-profile/references/bootstrap.md",
+      "bytes": 7083,
+      "sha256": "5db693816fb4e582a9306c93a7a74776d8e79ed5cd761932c7696383eacc3d5a",
+      "origin": "cloud:company-profile/references/bootstrap.md"
+    },
+    {
+      "path": "company-profile/references/database.md",
+      "bytes": 5185,
+      "sha256": "ac3fc6519db318aefa7b90e05c35b69550d1cb16da9e2597fe4013c8e185bb60",
+      "origin": "cloud:company-profile/references/database.md"
+    },
+    {
+      "path": "company-profile/references/editorial.md",
+      "bytes": 3888,
+      "sha256": "1e24b9fc75bab9b7a22cfeaa2acbea163b29eed2e6589043b89adccd4f73076f",
+      "origin": "cloud:company-profile/references/editorial.md"
+    },
+    {
+      "path": "company-profile/references/frontend.md",
+      "bytes": 3156,
+      "sha256": "db3274253013901c3bb1375ec4152789cb33dc5533aeafde4ea83925a0f1aba4",
+      "origin": "cloud:company-profile/references/frontend.md"
+    },
+    {
+      "path": "company-profile/references/graph-and-dedupe.md",
+      "bytes": 1854,
+      "sha256": "fd8de556ed1e1fcbb2c57cf15f23a98049e7c8e4e9d7b08ba577cc21701b0b0e",
+      "origin": "cloud:company-profile/references/graph-and-dedupe.md"
+    },
+    {
+      "path": "company-profile/references/images.md",
+      "bytes": 2171,
+      "sha256": "22e0e3ebb4404ef3fee7477af8b8487d3a953f7c7dfc0868d31c14d8729d1328",
+      "origin": "cloud:company-profile/references/images.md"
+    },
+    {
+      "path": "company-profile/references/publishing.md",
+      "bytes": 3092,
+      "sha256": "8e59425819faad53a17ab0788f212fb38264434b6d68b2a2bfcb0f4942972e9b",
+      "origin": "cloud:company-profile/references/publishing.md"
+    },
+    {
+      "path": "company-profile/references/source-adapters.md",
+      "bytes": 10897,
+      "sha256": "a74ffda1e0c6f04ff85546bf482877973ae3aa95939d0a17a61c6be413cdea7c",
+      "origin": "cloud:company-profile/references/source-adapters.md"
+    },
+    {
+      "path": "company-profile/references/sources.md",
+      "bytes": 2072,
+      "sha256": "c9d5a754a1653a91fdcf989d7952a02a600c595ed1cc684d12ae21f185fec075",
+      "origin": "cloud:company-profile/references/sources.md"
+    },
+    {
+      "path": "company-profile/references/taxonomy.md",
+      "bytes": 4579,
+      "sha256": "2447a6b171f2a585f88b5ce744b71e146901c4b695cf3d61898a7354dc782cdc",
+      "origin": "cloud:company-profile/references/taxonomy.md"
+    },
+    {
+      "path": "company-profile/references/worker-deployment.md",
+      "bytes": 7157,
+      "sha256": "3cba86b2416f075b69bf3878fdb8b6913f6c09435aabac5334605e311f6b496e",
+      "origin": "cloud:company-profile/references/worker-deployment.md"
+    },
+    {
+      "path": "company-profile/scripts/pipeline.py",
+      "bytes": 31044,
+      "sha256": "00b33b6d8d3cb0d34931bcfa0f4bb532a2e104e57d76f63340022daa103c6e2a",
+      "origin": "cloud:company-profile/scripts/pipeline.py"
+    },
+    {
+      "path": "company-profile/scripts/pipeline_directory.py",
+      "bytes": 5607,
+      "sha256": "bee813bfea2df309788959aae3207bbde01d0d08038575eac5f8bf7d4dc8b469",
+      "origin": "cloud:company-profile/scripts/pipeline_directory.py"
+    },
+    {
+      "path": "company-profile/scripts/test_pipeline.py",
+      "bytes": 14596,
+      "sha256": "6f936e2691d03888be746e58140d35f70ad34a611e21ea79175157c50e49b8fc",
+      "origin": "cloud:company-profile/scripts/test_pipeline.py"
+    },
+    {
+      "path": "company-profile/scripts/test_skill_contract.py",
+      "bytes": 1864,
+      "sha256": "fb7bbfa6a820e0922fc390300a941ede018e29aa16c1edf7c6f487d6db7830ae",
+      "origin": "cloud:company-profile/scripts/test_skill_contract.py"
+    },
+    {
+      "path": "company-profile/scripts/test_snapshot.py",
+      "bytes": 887,
+      "sha256": "dd29554a7ca388cf2d0cb050e47d91705aa76cf4b730b73c9f7b59634886a8df",
+      "origin": "cloud:company-profile/scripts/test_snapshot.py"
+    },
+    {
+      "path": "company-profile/scripts/test_starter.py",
+      "bytes": 6280,
+      "sha256": "805d2bca8405bac8d5466a04293b6fca0528e256e4bd70204dfc6af95db42a2a",
+      "origin": "cloud:company-profile/scripts/test_starter.py"
+    },
+    {
+      "path": "company-profile/scripts/test_validate_batch.py",
+      "bytes": 1581,
+      "sha256": "81a6ae35ec147c732749bd2b07b160c271e635da4ec7cadf2cdf044e1a7fdfc8",
+      "origin": "cloud:company-profile/scripts/test_validate_batch.py"
+    },
+    {
+      "path": "company-profile/scripts/test_validate_taxonomy.py",
+      "bytes": 1712,
+      "sha256": "588a4124e145cb26646d0d9fc73380c03cf409cc406acf932c71f00f351440ba",
+      "origin": "cloud:company-profile/scripts/test_validate_taxonomy.py"
+    },
+    {
+      "path": "company-profile/scripts/validate_batch.py",
+      "bytes": 2975,
+      "sha256": "3e605975ed10132f6e1f1f4afbc33cb983b0600dec3aad75e6d6a63b74e9789f",
+      "origin": "cloud:company-profile/scripts/validate_batch.py"
+    },
+    {
+      "path": "company-profile/scripts/validate_taxonomy.py",
+      "bytes": 3130,
+      "sha256": "ac000e226d381928b34cf6fa304b07cfa067d76ac036304bc82338fff1584522",
+      "origin": "cloud:company-profile/scripts/validate_taxonomy.py"
+    },
+    {
+      "path": "company-profile/scripts/verify_sqlite_snapshot.py",
+      "bytes": 2051,
+      "sha256": "8fdd30ba5742806c4dfd7f157564cbc452234c702edb157fbb2534ecbf53fc31",
+      "origin": "cloud:company-profile/scripts/verify_sqlite_snapshot.py"
+    },
+    {
+      "path": "production/dependencies.json",
+      "bytes": 967,
+      "sha256": "6951af256cfd39c0ff4fef700141047af09bbd6d48337b4cfb0ef4e06f740862",
+      "origin": "generated handoff documentation"
+    },
+    {
+      "path": "production/mode/mode-transition-v3.py",
+      "bytes": 5645,
+      "sha256": "d30389dc0930ea80849bba4744ba6cac6d38cc66f2a0d7e9461c87159f2d5aa8",
+      "origin": "<workspace>\\临时隔离验证-历史memo-20261116\\same-class-qualification-integration\\mode-transition-v3.py"
+    },
+    {
+      "path": "production/runtime/archiver.py",
+      "bytes": 21560,
+      "sha256": "e04b6137fb2484fb00fdc9fd58857b0018aada220ffa9ea0066b88810e0fe3f0",
+      "origin": "<workspace>\\归档程序与记录\\local_archiver\\image-production-release-v2\\archiver.py"
+    },
+    {
+      "path": "production/runtime/controlled_writer.py",
+      "bytes": 38874,
+      "sha256": "9d503db36cfec3e402f3bd57b7515045f3a7b49ea907a987424a932d70590dfe",
+      "origin": "<workspace>\\归档程序与记录\\local_archiver\\image-production-release-v2\\controlled_writer.py"
+    },
+    {
+      "path": "production/runtime/extensions.py",
+      "bytes": 9056,
+      "sha256": "fb79698bd3d76515d761617a376d463b7cdc5e372c7ed5ff994ceefa7fdaca4e",
+      "origin": "<workspace>\\归档程序与记录\\local_archiver\\image-production-release-v2\\extensions.py"
+    },
+    {
+      "path": "production/runtime/image_assets.py",
+      "bytes": 90637,
+      "sha256": "ae3ee6e5ca1fea6dc91ef9015b9039d7fb7a33c6d0470ac24782217533e00fa1",
+      "origin": "<workspace>\\归档程序与记录\\local_archiver\\image-production-release-v2\\image_assets.py"
+    },
+    {
+      "path": "production/runtime/new_entities.py",
+      "bytes": 18681,
+      "sha256": "bb31cd56dc4823ca365d80cb5755476d009b1591a15aca2ad77fa6d8647c1fcd",
+      "origin": "<workspace>\\归档程序与记录\\local_archiver\\image-production-release-v2\\new_entities.py"
+    },
+    {
+      "path": "production/runtime/primary_subject.py",
+      "bytes": 6375,
+      "sha256": "f28e873748edbcddb5fb7738082e8627447b356f2f2c8fc24a9c01d8d5609264",
+      "origin": "<workspace>\\归档程序与记录\\local_archiver\\image-production-release-v2\\primary_subject.py"
+    },
+    {
+      "path": "production/single-png-v4/existing-image-scheduler-v4.py",
+      "bytes": 30259,
+      "sha256": "047d684d4793bad1643c8e2d05304162b34e2478f468668340565502a630fff9",
+      "origin": "<workspace>\\临时隔离验证-历史memo-20261116\\member-a-existing-image-scheduler-candidate\\existing-image-scheduler-v4.py"
+    },
+    {
+      "path": "production/single-png-v4/navigation_bookmarks.py",
+      "bytes": 3440,
+      "sha256": "7b11a61a6b0e8f78a899e1e50fe74be881cf9db59674bfa5b242860a696a5072",
+      "origin": "<workspace>\\临时隔离验证-历史memo-20261116\\parameterized-text-scheduler-v2-bookmark-candidate\\navigation_bookmarks.py"
+    },
+    {
+      "path": "production/text-v4c2/literal_entity_gate.py",
+      "bytes": 6273,
+      "sha256": "69f299c78b8ace5dd22c8dd0f3ebe5632d4a14b46e1d92d48df1984b3625290e",
+      "origin": "<workspace>\\临时隔离验证-历史memo-20261116\\parameterized-text-scheduler-v4-crossbookmark-candidate\\literal_entity_gate.py"
+    },
+    {
+      "path": "production/text-v4c2/navigation_bookmarks.py",
+      "bytes": 3782,
+      "sha256": "28a003dc1c9d8f3742fea4402543aedf99aacb2d5ec294b09c2a920a3a1e84a7",
+      "origin": "<workspace>\\临时隔离验证-历史memo-20261116\\parameterized-text-scheduler-v4-crossbookmark-candidate\\navigation_bookmarks.py"
+    },
+    {
+      "path": "production/text-v4c2/parameterized-text-scheduler-crossbookmark-v4c2.py",
+      "bytes": 26968,
+      "sha256": "8e2aecb5eb19ea74e2b04ec7daa01aa5a8817c22c420c7dda9198abaaeb988b8",
+      "origin": "<workspace>\\临时隔离验证-历史memo-20261116\\parameterized-text-scheduler-v4-crossbookmark-candidate\\parameterized-text-scheduler-crossbookmark-v4c2.py"
+    },
+    {
+      "path": "verify_handoff.py",
+      "bytes": 606,
+      "sha256": "73d2ed11289c860a9bfa8849743d4127869c8c3382ee83635f4885c1ed635ee5",
+      "origin": "generated handoff documentation"
+    }
+  ],
+  "sanitized_copy": true,
+  "sanitization_note": "Personal names, organization names, local paths, and internal runtime counts were replaced with placeholders."
+}
