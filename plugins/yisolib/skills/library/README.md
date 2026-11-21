@@ -31,6 +31,7 @@
 - `scripts/`：扫描、批次、写入、校验和回归；
 - `assets/starter/`：合成 SQLite 与四栏阅读模板；
 - `production/`：本地写入所依赖的固定运行模块。
+- `openai.yaml`：OpenAI/Codex 技能界面元数据，Claude Code 不加载。
 
 ## 合成演示
 

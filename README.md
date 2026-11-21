@@ -24,7 +24,7 @@ yiso-marketplace/
 │               ├── assets/          # Starter、合成样例和图标
 │               ├── production/      # 本地归档依赖的固定运行模块
 │               ├── tests/           # 技能级回归与验收脚本
-│               └── agents/openai.yaml # OpenAI/Codex 元数据，Claude 不加载
+│               └── openai.yaml      # OpenAI/Codex 元数据，Claude 不加载
 └── docs/
     ├── index.html                   # 安装与使用说明
     ├── style.css

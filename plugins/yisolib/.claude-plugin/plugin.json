@@ -1,7 +1,7 @@
 {
   "name": "yisolib",
   "description": "读取本地投研资料，拆分研究事项，保留出处与证据，并归档到 Library。",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": {
     "name": "Yiso"
   },
